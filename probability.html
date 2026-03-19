@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Introduction to Probability | Statistics for Business: A Practical Introduction</title>
+  <meta name="description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Introduction to Probability | Statistics for Business: A Practical Introduction" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Introduction to Probability | Statistics for Business: A Practical Introduction" />
+  
+  <meta name="twitter:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+<meta name="author" content="Your Name" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualization.html"/>
+<link rel="next" href="discrete.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics for Business</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome-to-statistics-for-business"><i class="fa fa-check"></i>Welcome to Statistics for Business</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-this-book-is-for"><i class="fa fa-check"></i>Who This Book Is For</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-purpose-of-this-book"><i class="fa fa-check"></i>The Purpose of This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-note-about-excel"><i class="fa fa-check"></i>A Note About Excel</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#conventions-used-in-this-book"><i class="fa fa-check"></i>Conventions Used in This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#why-statistics-a-business-perspective"><i class="fa fa-check"></i><b>1.1</b> Why Statistics? A Business Perspective</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-statistics"><i class="fa fa-check"></i><b>1.2</b> What Is Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#inferential-statistics"><i class="fa fa-check"></i><b>1.4</b> Inferential Statistics</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.5</b> Populations and Samples</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#parameters-and-statistics"><i class="fa fa-check"></i><b>1.6</b> Parameters and Statistics</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#the-statistical-process"><i class="fa fa-check"></i><b>1.7</b> The Statistical Process</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#step-1-ask-a-clear-question"><i class="fa fa-check"></i><b>1.7.1</b> Step 1: Ask a Clear Question</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#step-2-collect-data"><i class="fa fa-check"></i><b>1.7.2</b> Step 2: Collect Data</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#step-3-analyze-the-data"><i class="fa fa-check"></i><b>1.7.3</b> Step 3: Analyze the Data</a></li>
+<li class="chapter" data-level="1.7.4" data-path="intro.html"><a href="intro.html#step-4-interpret-and-communicate"><i class="fa fa-check"></i><b>1.7.4</b> Step 4: Interpret and Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>2</b> Data Types and Collection</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data.html"><a href="data.html#data-is-the-raw-material-of-statistics"><i class="fa fa-check"></i><b>2.1</b> Data Is the Raw Material of Statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="data.html"><a href="data.html#qualitative-vs.-quantitative-data"><i class="fa fa-check"></i><b>2.2</b> Qualitative vs. Quantitative Data</a></li>
+<li class="chapter" data-level="2.3" data-path="data.html"><a href="data.html#levels-of-measurement"><i class="fa fa-check"></i><b>2.3</b> Levels of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data.html"><a href="data.html#nominal-scale"><i class="fa fa-check"></i><b>2.3.1</b> Nominal Scale</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data.html"><a href="data.html#ordinal-scale"><i class="fa fa-check"></i><b>2.3.2</b> Ordinal Scale</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data.html"><a href="data.html#interval-scale"><i class="fa fa-check"></i><b>2.3.3</b> Interval Scale</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data.html"><a href="data.html#ratio-scale"><i class="fa fa-check"></i><b>2.3.4</b> Ratio Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data.html"><a href="data.html#cross-sectional-vs.-time-series-data"><i class="fa fa-check"></i><b>2.4</b> Cross-Sectional vs. Time-Series Data</a></li>
+<li class="chapter" data-level="2.5" data-path="data.html"><a href="data.html#primary-vs.-secondary-data"><i class="fa fa-check"></i><b>2.5</b> Primary vs. Secondary Data</a></li>
+<li class="chapter" data-level="2.6" data-path="data.html"><a href="data.html#sampling-methods"><i class="fa fa-check"></i><b>2.6</b> Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data.html"><a href="data.html#simple-random-sampling"><i class="fa fa-check"></i><b>2.6.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data.html"><a href="data.html#systematic-sampling"><i class="fa fa-check"></i><b>2.6.2</b> Systematic Sampling</a></li>
+<li class="chapter" data-level="2.6.3" data-path="data.html"><a href="data.html#stratified-sampling"><i class="fa fa-check"></i><b>2.6.3</b> Stratified Sampling</a></li>
+<li class="chapter" data-level="2.6.4" data-path="data.html"><a href="data.html#cluster-sampling"><i class="fa fa-check"></i><b>2.6.4</b> Cluster Sampling</a></li>
+<li class="chapter" data-level="2.6.5" data-path="data.html"><a href="data.html#convenience-sampling"><i class="fa fa-check"></i><b>2.6.5</b> Convenience Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="data.html"><a href="data.html#surveys-and-questionnaire-design"><i class="fa fa-check"></i><b>2.7</b> Surveys and Questionnaire Design</a></li>
+<li class="chapter" data-level="2.8" data-path="data.html"><a href="data.html#sources-of-bias"><i class="fa fa-check"></i><b>2.8</b> Sources of Bias</a></li>
+<li class="chapter" data-level="" data-path="data.html"><a href="data.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive.html"><a href="descriptive.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive.html"><a href="descriptive.html#from-data-to-understanding"><i class="fa fa-check"></i><b>3.1</b> From Data to Understanding</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive.html"><a href="descriptive.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>3.2</b> Measures of Central Tendency</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="descriptive.html"><a href="descriptive.html#the-mean"><i class="fa fa-check"></i><b>3.2.1</b> The Mean</a></li>
+<li class="chapter" data-level="3.2.2" data-path="descriptive.html"><a href="descriptive.html#the-median"><i class="fa fa-check"></i><b>3.2.2</b> The Median</a></li>
+<li class="chapter" data-level="3.2.3" data-path="descriptive.html"><a href="descriptive.html#the-mode"><i class="fa fa-check"></i><b>3.2.3</b> The Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="descriptive.html"><a href="descriptive.html#the-weighted-mean"><i class="fa fa-check"></i><b>3.3</b> The Weighted Mean</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive.html"><a href="descriptive.html#measures-of-variability"><i class="fa fa-check"></i><b>3.4</b> Measures of Variability</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="descriptive.html"><a href="descriptive.html#the-range"><i class="fa fa-check"></i><b>3.4.1</b> The Range</a></li>
+<li class="chapter" data-level="3.4.2" data-path="descriptive.html"><a href="descriptive.html#variance-and-standard-deviation"><i class="fa fa-check"></i><b>3.4.2</b> Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="descriptive.html"><a href="descriptive.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>3.4.3</b> The Coefficient of Variation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="descriptive.html"><a href="descriptive.html#the-empirical-rule"><i class="fa fa-check"></i><b>3.5</b> The Empirical Rule</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive.html"><a href="descriptive.html#percentiles-and-quartiles"><i class="fa fa-check"></i><b>3.6</b> Percentiles and Quartiles</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive.html"><a href="descriptive.html#the-five-number-summary-and-box-plots"><i class="fa fa-check"></i><b>3.7</b> The Five-Number Summary and Box Plots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive.html"><a href="descriptive.html#excel-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8</b> Excel for Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="descriptive.html"><a href="descriptive.html#using-the-data-analysis-toolpak-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8.1</b> Using the Data Analysis ToolPak for Descriptive Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive.html"><a href="descriptive.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualization.html"><a href="visualization.html#a-picture-is-worth-a-thousand-numbers"><i class="fa fa-check"></i><b>4.1</b> A Picture Is Worth a Thousand Numbers</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions"><i class="fa fa-check"></i><b>4.2</b> Frequency Distributions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-categorical-data"><i class="fa fa-check"></i><b>4.2.1</b> Frequency Distributions for Categorical Data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-quantitative-data"><i class="fa fa-check"></i><b>4.2.2</b> Frequency Distributions for Quantitative Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visualization.html"><a href="visualization.html#histograms"><i class="fa fa-check"></i><b>4.3</b> Histograms</a></li>
+<li class="chapter" data-level="4.4" data-path="visualization.html"><a href="visualization.html#bar-charts"><i class="fa fa-check"></i><b>4.4</b> Bar Charts</a></li>
+<li class="chapter" data-level="4.5" data-path="visualization.html"><a href="visualization.html#pie-charts"><i class="fa fa-check"></i><b>4.5</b> Pie Charts</a></li>
+<li class="chapter" data-level="4.6" data-path="visualization.html"><a href="visualization.html#line-charts-for-time-series"><i class="fa fa-check"></i><b>4.6</b> Line Charts for Time Series</a></li>
+<li class="chapter" data-level="4.7" data-path="visualization.html"><a href="visualization.html#scatter-plots"><i class="fa fa-check"></i><b>4.7</b> Scatter Plots</a></li>
+<li class="chapter" data-level="4.8" data-path="visualization.html"><a href="visualization.html#principles-of-good-data-visualization"><i class="fa fa-check"></i><b>4.8</b> Principles of Good Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Introduction to Probability</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#uncertainty-is-the-business-condition"><i class="fa fa-check"></i><b>5.1</b> Uncertainty Is the Business Condition</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#basic-probability-concepts"><i class="fa fa-check"></i><b>5.2</b> Basic Probability Concepts</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="probability.html"><a href="probability.html#experiments-outcomes-and-sample-spaces"><i class="fa fa-check"></i><b>5.2.1</b> Experiments, Outcomes, and Sample Spaces</a></li>
+<li class="chapter" data-level="5.2.2" data-path="probability.html"><a href="probability.html#the-probability-of-an-event"><i class="fa fa-check"></i><b>5.2.2</b> The Probability of an Event</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#classical-empirical-and-subjective-probability"><i class="fa fa-check"></i><b>5.3</b> Classical, Empirical, and Subjective Probability</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="probability.html"><a href="probability.html#classical-probability"><i class="fa fa-check"></i><b>5.3.1</b> Classical Probability</a></li>
+<li class="chapter" data-level="5.3.2" data-path="probability.html"><a href="probability.html#empirical-probability"><i class="fa fa-check"></i><b>5.3.2</b> Empirical Probability</a></li>
+<li class="chapter" data-level="5.3.3" data-path="probability.html"><a href="probability.html#subjective-probability"><i class="fa fa-check"></i><b>5.3.3</b> Subjective Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#the-complement-rule"><i class="fa fa-check"></i><b>5.4</b> The Complement Rule</a></li>
+<li class="chapter" data-level="5.5" data-path="probability.html"><a href="probability.html#the-addition-rule"><i class="fa fa-check"></i><b>5.5</b> The Addition Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="probability.html"><a href="probability.html#mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.1</b> Mutually Exclusive Events</a></li>
+<li class="chapter" data-level="5.5.2" data-path="probability.html"><a href="probability.html#general-addition-rule-non-mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.2</b> General Addition Rule (Non-Mutually Exclusive Events)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="probability.html"><a href="probability.html#the-multiplication-rule"><i class="fa fa-check"></i><b>5.6</b> The Multiplication Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="probability.html"><a href="probability.html#independent-events"><i class="fa fa-check"></i><b>5.6.1</b> Independent Events</a></li>
+<li class="chapter" data-level="5.6.2" data-path="probability.html"><a href="probability.html#dependent-events-and-conditional-probability"><i class="fa fa-check"></i><b>5.6.2</b> Dependent Events and Conditional Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="probability.html"><a href="probability.html#contingency-tables"><i class="fa fa-check"></i><b>5.7</b> Contingency Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="probability.html"><a href="probability.html#tree-diagrams"><i class="fa fa-check"></i><b>5.8</b> Tree Diagrams</a></li>
+<li class="chapter" data-level="5.9" data-path="probability.html"><a href="probability.html#excel-for-probability-calculations"><i class="fa fa-check"></i><b>5.9</b> Excel for Probability Calculations</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete.html"><a href="discrete.html"><i class="fa fa-check"></i><b>6</b> Discrete Probability Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete.html"><a href="discrete.html#from-events-to-distributions"><i class="fa fa-check"></i><b>6.1</b> From Events to Distributions</a></li>
+<li class="chapter" data-level="6.2" data-path="discrete.html"><a href="discrete.html#random-variables"><i class="fa fa-check"></i><b>6.2</b> Random Variables</a></li>
+<li class="chapter" data-level="6.3" data-path="discrete.html"><a href="discrete.html#probability-distribution-tables"><i class="fa fa-check"></i><b>6.3</b> Probability Distribution Tables</a></li>
+<li class="chapter" data-level="6.4" data-path="discrete.html"><a href="discrete.html#expected-value-mean-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.4</b> Expected Value (Mean) of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.5" data-path="discrete.html"><a href="discrete.html#variance-and-standard-deviation-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.5</b> Variance and Standard Deviation of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.6" data-path="discrete.html"><a href="discrete.html#expected-value-in-business-decision-making"><i class="fa fa-check"></i><b>6.6</b> Expected Value in Business Decision Making</a></li>
+<li class="chapter" data-level="6.7" data-path="discrete.html"><a href="discrete.html#the-binomial-distribution"><i class="fa fa-check"></i><b>6.7</b> The Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-binomial-distribution"><i class="fa fa-check"></i><b>6.7.1</b> Conditions for a Binomial Distribution</a></li>
+<li class="chapter" data-level="6.7.2" data-path="discrete.html"><a href="discrete.html#binomial-probability-formula"><i class="fa fa-check"></i><b>6.7.2</b> Binomial Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="discrete.html"><a href="discrete.html#the-poisson-distribution"><i class="fa fa-check"></i><b>6.8</b> The Poisson Distribution</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-poisson-distribution"><i class="fa fa-check"></i><b>6.8.1</b> Conditions for a Poisson Distribution</a></li>
+<li class="chapter" data-level="6.8.2" data-path="discrete.html"><a href="discrete.html#poisson-probability-formula"><i class="fa fa-check"></i><b>6.8.2</b> Poisson Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="discrete.html"><a href="discrete.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="normal.html"><a href="normal.html"><i class="fa fa-check"></i><b>7</b> The Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="normal.html"><a href="normal.html#the-most-important-distribution-in-statistics"><i class="fa fa-check"></i><b>7.1</b> The Most Important Distribution in Statistics</a></li>
+<li class="chapter" data-level="7.2" data-path="normal.html"><a href="normal.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="7.3" data-path="normal.html"><a href="normal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>7.3</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="7.4" data-path="normal.html"><a href="normal.html#z-scores"><i class="fa fa-check"></i><b>7.4</b> Z-Scores</a></li>
+<li class="chapter" data-level="7.5" data-path="normal.html"><a href="normal.html#finding-probabilities-using-z-scores"><i class="fa fa-check"></i><b>7.5</b> Finding Probabilities Using Z-Scores</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="normal.html"><a href="normal.html#using-standard-normal-tables"><i class="fa fa-check"></i><b>7.5.1</b> Using Standard Normal Tables</a></li>
+<li class="chapter" data-level="7.5.2" data-path="normal.html"><a href="normal.html#using-excel-for-normal-probabilities"><i class="fa fa-check"></i><b>7.5.2</b> Using Excel for Normal Probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="normal.html"><a href="normal.html#finding-values-from-probabilities-inverse-normal"><i class="fa fa-check"></i><b>7.6</b> Finding Values from Probabilities (Inverse Normal)</a></li>
+<li class="chapter" data-level="7.7" data-path="normal.html"><a href="normal.html#business-applications-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.7</b> Business Applications of the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="normal.html"><a href="normal.html#quality-control"><i class="fa fa-check"></i><b>7.7.1</b> Quality Control</a></li>
+<li class="chapter" data-level="7.7.2" data-path="normal.html"><a href="normal.html#financial-returns"><i class="fa fa-check"></i><b>7.7.2</b> Financial Returns</a></li>
+<li class="chapter" data-level="7.7.3" data-path="normal.html"><a href="normal.html#employee-assessment"><i class="fa fa-check"></i><b>7.7.3</b> Employee Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="normal.html"><a href="normal.html#normal-approximation-to-the-binomial"><i class="fa fa-check"></i><b>7.8</b> Normal Approximation to the Binomial</a></li>
+<li class="chapter" data-level="" data-path="normal.html"><a href="normal.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>8</b> Sampling Distributions and the Central Limit Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sampling.html"><a href="sampling.html#from-samples-to-inference"><i class="fa fa-check"></i><b>8.1</b> From Samples to Inference</a></li>
+<li class="chapter" data-level="8.2" data-path="sampling.html"><a href="sampling.html#sampling-error"><i class="fa fa-check"></i><b>8.2</b> Sampling Error</a></li>
+<li class="chapter" data-level="8.3" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-mean"><i class="fa fa-check"></i><b>8.3</b> The Sampling Distribution of the Sample Mean</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sampling.html"><a href="sampling.html#mean-and-standard-error-of-barx"><i class="fa fa-check"></i><b>8.3.1</b> Mean and Standard Error of <span class="math inline">\(\bar{x}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="sampling.html"><a href="sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>8.4</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="8.5" data-path="sampling.html"><a href="sampling.html#applying-the-clt-to-business-problems"><i class="fa fa-check"></i><b>8.5</b> Applying the CLT to Business Problems</a></li>
+<li class="chapter" data-level="8.6" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-proportion"><i class="fa fa-check"></i><b>8.6</b> The Sampling Distribution of the Sample Proportion</a></li>
+<li class="chapter" data-level="8.7" data-path="sampling.html"><a href="sampling.html#excel-simulation-to-illustrate-the-clt"><i class="fa fa-check"></i><b>8.7</b> Excel Simulation to Illustrate the CLT</a></li>
+<li class="chapter" data-level="" data-path="sampling.html"><a href="sampling.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#estimation-and-uncertainty"><i class="fa fa-check"></i><b>9.1</b> Estimation and Uncertainty</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-concept-of-a-confidence-interval"><i class="fa fa-check"></i><b>9.2</b> The Concept of a Confidence Interval</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#what-does-95-confidence-mean"><i class="fa fa-check"></i><b>9.2.1</b> What Does “95% Confidence” Mean?</a></li>
+<li class="chapter" data-level="9.2.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-confidence-level-and-critical-values"><i class="fa fa-check"></i><b>9.2.2</b> The Confidence Level and Critical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>9.3</b> Confidence Interval for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-t-distribution-and-confidence-interval-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>9.4</b> The t-Distribution and Confidence Interval for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#properties-of-the-t-distribution"><i class="fa fa-check"></i><b>9.4.1</b> Properties of the t-Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-proportion"><i class="fa fa-check"></i><b>9.5</b> Confidence Interval for a Population Proportion</a></li>
+<li class="chapter" data-level="9.6" data-path="confidence-intervals.html"><a href="confidence-intervals.html#choosing-sample-size"><i class="fa fa-check"></i><b>9.6</b> Choosing Sample Size</a></li>
+<li class="chapter" data-level="9.7" data-path="confidence-intervals.html"><a href="confidence-intervals.html#interpreting-confidence-intervals-in-business-reports"><i class="fa fa-check"></i><b>9.7</b> Interpreting Confidence Intervals in Business Reports</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hypothesis-one.html"><a href="hypothesis-one.html"><i class="fa fa-check"></i><b>10</b> Hypothesis Testing — One Sample</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.1</b> The Logic of Hypothesis Testing</a></li>
+<li class="chapter" data-level="10.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-and-structure-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.2</b> The Logic and Structure of Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-1-state-the-hypotheses"><i class="fa fa-check"></i><b>10.2.1</b> Step 1: State the Hypotheses</a></li>
+<li class="chapter" data-level="10.2.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>10.2.2</b> One-Tailed vs. Two-Tailed Tests</a></li>
+<li class="chapter" data-level="10.2.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-2-set-the-significance-level"><i class="fa fa-check"></i><b>10.2.3</b> Step 2: Set the Significance Level</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#type-i-and-type-ii-errors"><i class="fa fa-check"></i><b>10.3</b> Type I and Type II Errors</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-3-compute-the-test-statistic"><i class="fa fa-check"></i><b>10.3.1</b> Step 3: Compute the Test Statistic</a></li>
+<li class="chapter" data-level="10.3.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-4-find-the-p-value"><i class="fa fa-check"></i><b>10.3.2</b> Step 4: Find the P-value</a></li>
+<li class="chapter" data-level="10.3.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-5-make-a-decision"><i class="fa fa-check"></i><b>10.3.3</b> Step 5: Make a Decision</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>10.4</b> Z-Test for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="10.5" data-path="hypothesis-one.html"><a href="hypothesis-one.html#t-test-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>10.5</b> t-Test for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#using-excels-data-analysis-toolpak-for-t-tests"><i class="fa fa-check"></i><b>10.5.1</b> Using Excel’s Data Analysis ToolPak for t-Tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-proportion"><i class="fa fa-check"></i><b>10.6</b> Z-Test for a Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-one.html"><a href="hypothesis-one.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-two.html"><a href="hypothesis-two.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing — Two Samples</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#comparing-two-groups"><i class="fa fa-check"></i><b>11.1</b> Comparing Two Groups</a></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#independent-vs.-paired-samples"><i class="fa fa-check"></i><b>11.2</b> Independent vs. Paired Samples</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-t-test-for-independent-means"><i class="fa fa-check"></i><b>11.3</b> Two-Sample t-Test for Independent Means</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-1-equal-variances-pooled-t-test"><i class="fa fa-check"></i><b>11.3.1</b> Case 1: Equal Variances (Pooled t-Test)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-2-unequal-variances-welchs-t-test"><i class="fa fa-check"></i><b>11.3.2</b> Case 2: Unequal Variances (Welch’s t-Test)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="hypothesis-two.html"><a href="hypothesis-two.html#the-paired-t-test"><i class="fa fa-check"></i><b>11.4</b> The Paired t-Test</a></li>
+<li class="chapter" data-level="11.5" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-z-test-for-proportions"><i class="fa fa-check"></i><b>11.5</b> Two-Sample Z-Test for Proportions</a></li>
+<li class="chapter" data-level="11.6" data-path="hypothesis-two.html"><a href="hypothesis-two.html#effect-size-cohens-d"><i class="fa fa-check"></i><b>11.6</b> Effect Size: Cohen’s d</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-two.html"><a href="hypothesis-two.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>12</b> Correlation and Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="regression.html"><a href="regression.html#relationships-between-variables"><i class="fa fa-check"></i><b>12.1</b> Relationships Between Variables</a></li>
+<li class="chapter" data-level="12.2" data-path="regression.html"><a href="regression.html#scatter-plots-and-relationships"><i class="fa fa-check"></i><b>12.2</b> Scatter Plots and Relationships</a></li>
+<li class="chapter" data-level="12.3" data-path="regression.html"><a href="regression.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>12.3</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="12.4" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>12.4</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="regression.html"><a href="regression.html#the-regression-equation"><i class="fa fa-check"></i><b>12.4.1</b> The Regression Equation</a></li>
+<li class="chapter" data-level="12.4.2" data-path="regression.html"><a href="regression.html#the-least-squares-method"><i class="fa fa-check"></i><b>12.4.2</b> The Least Squares Method</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="regression.html"><a href="regression.html#interpreting-the-slope-and-intercept"><i class="fa fa-check"></i><b>12.5</b> Interpreting the Slope and Intercept</a></li>
+<li class="chapter" data-level="12.6" data-path="regression.html"><a href="regression.html#the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>12.6</b> The Coefficient of Determination (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="12.7" data-path="regression.html"><a href="regression.html#residuals-and-checking-model-fit"><i class="fa fa-check"></i><b>12.7</b> Residuals and Checking Model Fit</a></li>
+<li class="chapter" data-level="12.8" data-path="regression.html"><a href="regression.html#making-predictions-and-understanding-their-limits"><i class="fa fa-check"></i><b>12.8</b> Making Predictions and Understanding Their Limits</a></li>
+<li class="chapter" data-level="12.9" data-path="regression.html"><a href="regression.html#excel-for-regression-analysis"><i class="fa fa-check"></i><b>12.9</b> Excel for Regression Analysis</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>13</b> Chi-Square Tests</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="chi-square.html"><a href="chi-square.html#when-the-data-is-categorical"><i class="fa fa-check"></i><b>13.1</b> When the Data Is Categorical</a></li>
+<li class="chapter" data-level="13.2" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-statistic"><i class="fa fa-check"></i><b>13.2</b> The Chi-Square Statistic</a></li>
+<li class="chapter" data-level="13.3" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>13.3</b> The Chi-Square Goodness-of-Fit Test</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="chi-square.html"><a href="chi-square.html#concept"><i class="fa fa-check"></i><b>13.3.1</b> Concept</a></li>
+<li class="chapter" data-level="13.3.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies"><i class="fa fa-check"></i><b>13.3.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.3.3" data-path="chi-square.html"><a href="chi-square.html#degrees-of-freedom"><i class="fa fa-check"></i><b>13.3.3</b> Degrees of Freedom</a></li>
+<li class="chapter" data-level="13.3.4" data-path="chi-square.html"><a href="chi-square.html#conditions"><i class="fa fa-check"></i><b>13.3.4</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.4</b> The Chi-Square Test of Independence</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="chi-square.html"><a href="chi-square.html#concept-1"><i class="fa fa-check"></i><b>13.4.1</b> Concept</a></li>
+<li class="chapter" data-level="13.4.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies-1"><i class="fa fa-check"></i><b>13.4.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.4.3" data-path="chi-square.html"><a href="chi-square.html#conditions-1"><i class="fa fa-check"></i><b>13.4.3</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="chi-square.html"><a href="chi-square.html#excel-for-chi-square-tests"><i class="fa fa-check"></i><b>13.5</b> Excel for Chi-Square Tests</a></li>
+<li class="chapter" data-level="13.6" data-path="chi-square.html"><a href="chi-square.html#business-applications"><i class="fa fa-check"></i><b>13.6</b> Business Applications</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="chi-square.html"><a href="chi-square.html#market-research"><i class="fa fa-check"></i><b>13.6.1</b> Market Research</a></li>
+<li class="chapter" data-level="13.6.2" data-path="chi-square.html"><a href="chi-square.html#customer-satisfaction-analysis"><i class="fa fa-check"></i><b>13.6.2</b> Customer Satisfaction Analysis</a></li>
+<li class="chapter" data-level="13.6.3" data-path="chi-square.html"><a href="chi-square.html#quality-control-1"><i class="fa fa-check"></i><b>13.6.3</b> Quality Control</a></li>
+<li class="chapter" data-level="13.6.4" data-path="chi-square.html"><a href="chi-square.html#human-resources"><i class="fa fa-check"></i><b>13.6.4</b> Human Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Business: A Practical Introduction</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Introduction to Probability<a href="probability.html#probability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="uncertainty-is-the-business-condition" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Uncertainty Is the Business Condition<a href="probability.html#uncertainty-is-the-business-condition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every business decision involves uncertainty. Will this product sell? Will a loan be repaid? Will a shipment arrive on time? Will a new hire succeed? The tools of probability give us a principled, mathematical way to reason about uncertainty — to move from “I have no idea” to “based on evidence, there is a 73% chance of this outcome.”</p>
+<p>Probability is the mathematical foundation of statistics. The concepts in this chapter underlie every inferential procedure in the rest of the book: confidence intervals, hypothesis tests, and regression inference all depend on probability reasoning. More immediately, probability appears directly in business decisions: insurance pricing, quality control, supply chain management, and financial risk analysis all rely on probability calculations.</p>
+</div>
+<div id="basic-probability-concepts" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Basic Probability Concepts<a href="probability.html#basic-probability-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="experiments-outcomes-and-sample-spaces" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Experiments, Outcomes, and Sample Spaces<a href="probability.html#experiments-outcomes-and-sample-spaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>probability experiment</strong> (or random experiment) is any process that produces an outcome that cannot be predicted with certainty in advance.</p>
+<p>Examples:
+- Rolling a die
+- Randomly selecting a customer from a database
+- Testing a manufactured item to see if it is defective
+- Recording whether the next customer pays with cash or card</p>
+<p>An <strong>outcome</strong> is a single possible result of an experiment.</p>
+<p>The <strong>sample space</strong> (<span class="math inline">\(S\)</span>) is the set of all possible outcomes of an experiment.</p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="43%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>Possible Outcomes</th>
+<th>Sample Space</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Flip a coin</td>
+<td>Heads, Tails</td>
+<td><span class="math inline">\(S = \{H, T\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Roll a six-sided die</td>
+<td>1, 2, 3, 4, 5, 6</td>
+<td><span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Classify a customer complaint</td>
+<td>Billing, Shipping, Quality, Other</td>
+<td><span class="math inline">\(S = \{B, S, Q, O\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Record whether item is defective</td>
+<td>Defective, Not defective</td>
+<td><span class="math inline">\(S = \{D, ND\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>An <strong>event</strong> is any subset of the sample space — one or more outcomes grouped together because they satisfy some condition of interest.</p>
+<p>Example: Rolling a die and defining event <span class="math inline">\(A\)</span> = “roll an even number.” Then <span class="math inline">\(A = \{2, 4, 6\}\)</span>, which is a subset of <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>.</p>
+</div>
+<div id="the-probability-of-an-event" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> The Probability of an Event<a href="probability.html#the-probability-of-an-event" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>probability</strong> of an event <span class="math inline">\(A\)</span>, written <span class="math inline">\(P(A)\)</span>, is a number between 0 and 1 that represents the likelihood of that event occurring.</p>
+<ul>
+<li><span class="math inline">\(P(A) = 0\)</span> means the event is impossible.</li>
+<li><span class="math inline">\(P(A) = 1\)</span> means the event is certain.</li>
+<li><span class="math inline">\(P(A) = 0.5\)</span> means the event is equally likely to occur or not occur.</li>
+</ul>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>Basic Probability Properties:</strong>
+1. <span class="math inline">\(0 \leq P(A) \leq 1\)</span> for any event <span class="math inline">\(A\)</span>
+2. <span class="math inline">\(P(S) = 1\)</span> (the probability of some outcome in the sample space is 1)
+3. <span class="math inline">\(\sum_{\text{all outcomes}} P(\text{outcome}) = 1\)</span></p>
+</div>
+</div>
+</div>
+<div id="classical-empirical-and-subjective-probability" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Classical, Empirical, and Subjective Probability<a href="probability.html#classical-empirical-and-subjective-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are three ways to assign a probability to an event.</p>
+<div id="classical-probability" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Classical Probability<a href="probability.html#classical-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Classical probability</strong> applies when all outcomes in the sample space are <strong>equally likely</strong>. The probability of an event is the number of favorable outcomes divided by the total number of outcomes.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[P(A) = \frac{\text{Number of outcomes in event } A}{\text{Total number of outcomes in the sample space}} = \frac{n(A)}{n(S)}\]</span></p>
+</div>
+<p><strong>Example:</strong> A raffle has 500 tickets, and you bought 20. What is the probability you win?
+<span class="math display">\[P(\text{win}) = \frac{20}{500} = 0.04 = 4\%\]</span></p>
+</div>
+<div id="empirical-probability" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Empirical Probability<a href="probability.html#empirical-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Empirical probability</strong> (also called relative frequency probability) is based on observed data from past experiments or historical records. You run the experiment many times and use the proportion of times the event occurred as the probability.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[P(A) = \frac{\text{Number of times event } A \text{ occurred}}{\text{Total number of trials}}\]</span></p>
+</div>
+<p><strong>Example:</strong> A manufacturer’s quality records show that 37 out of 2,000 items produced last week were defective. Based on this history:
+<span class="math display">\[P(\text{defective}) = \frac{37}{2000} = 0.0185 = 1.85\%\]</span></p>
+<p>This empirical probability can now be used for planning: in a production run of 10,000 units, we’d expect approximately <span class="math inline">\(10,000 \times 0.0185 = 185\)</span> defective items.</p>
+</div>
+<div id="subjective-probability" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Subjective Probability<a href="probability.html#subjective-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Subjective probability</strong> is a personal assessment of the likelihood of an event, based on expert judgment, experience, or incomplete information. It does not require historical data or equally likely outcomes.</p>
+<p>Examples:
+- A venture capitalist estimates a 30% chance that a startup will achieve profitability within two years.
+- A project manager believes there is a 70% probability that the project will be completed on time.
+- An analyst forecasts a 40% chance of a recession in the next 12 months.</p>
+<p>Subjective probabilities are common in business because many decisions involve novel situations where historical data is limited. They are legitimate as long as they are consistent with probability rules.</p>
+</div>
+</div>
+<div id="the-complement-rule" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> The Complement Rule<a href="probability.html#the-complement-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>complement</strong> of event <span class="math inline">\(A\)</span> (written <span class="math inline">\(A^c\)</span> or <span class="math inline">\(\bar{A}\)</span>) is the set of all outcomes in the sample space that are NOT in <span class="math inline">\(A\)</span>. Since every outcome either is or is not in <span class="math inline">\(A\)</span>:</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[P(A^c) = 1 - P(A)\]</span></p>
+</div>
+<p><strong>Example:</strong> If there is a 15% chance that a customer will request a refund, then there is a <span class="math inline">\((1 - 0.15) = 85\%\)</span> chance they will not request a refund.</p>
+<p>The complement rule is surprisingly useful — sometimes it is much easier to compute the probability of “not A” and subtract from 1.</p>
+</div>
+<div id="the-addition-rule" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> The Addition Rule<a href="probability.html#the-addition-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>addition rule</strong> finds the probability that event <span class="math inline">\(A\)</span> <strong>OR</strong> event <span class="math inline">\(B\)</span> occurs (or both).</p>
+<div id="mutually-exclusive-events" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Mutually Exclusive Events<a href="probability.html#mutually-exclusive-events" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>mutually exclusive</strong> (also called disjoint) if they cannot both occur at the same time. If <span class="math inline">\(A\)</span> happens, <span class="math inline">\(B\)</span> cannot happen, and vice versa.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>Addition Rule for Mutually Exclusive Events:</strong>
+<span class="math display">\[P(A \text{ or } B) = P(A) + P(B)\]</span></p>
+</div>
+<p><strong>Example:</strong> A customer calls customer service. Based on past data, the probability the issue is a billing problem is 0.35, and the probability it is a shipping problem is 0.28. (A call cannot be classified as both.) What is the probability of either a billing or shipping issue?
+<span class="math display">\[P(\text{billing or shipping}) = 0.35 + 0.28 = 0.63\]</span></p>
+</div>
+<div id="general-addition-rule-non-mutually-exclusive-events" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> General Addition Rule (Non-Mutually Exclusive Events)<a href="probability.html#general-addition-rule-non-mutually-exclusive-events" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> <strong>can both occur at the same time</strong>, simply adding <span class="math inline">\(P(A) + P(B)\)</span> double-counts the outcomes where both occur. We subtract the overlap:</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>General Addition Rule:</strong>
+<span class="math display">\[P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)\]</span></p>
+</div>
+<p><strong>Example:</strong> At a company, 60% of employees have a college degree, 40% have more than 5 years of experience, and 25% have both. What is the probability that a randomly selected employee has a degree OR more than 5 years of experience?
+<span class="math display">\[P(\text{degree or experience}) = 0.60 + 0.40 - 0.25 = 0.75\]</span></p>
+</div>
+</div>
+<div id="the-multiplication-rule" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> The Multiplication Rule<a href="probability.html#the-multiplication-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>multiplication rule</strong> finds the probability that event <span class="math inline">\(A\)</span> <strong>AND</strong> event <span class="math inline">\(B\)</span> both occur.</p>
+<div id="independent-events" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Independent Events<a href="probability.html#independent-events" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent</strong> if the occurrence of one does not affect the probability of the other.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>Multiplication Rule for Independent Events:</strong>
+<span class="math display">\[P(A \text{ and } B) = P(A) \times P(B)\]</span></p>
+</div>
+<p><strong>Example:</strong> A supplier has a 5% defect rate. You receive two separate shipments from this supplier. What is the probability that both shipments contain at least one defective item? (Assuming shipments are independent.)
+<span class="math display">\[P(\text{both defective}) = 0.05 \times 0.05 = 0.0025 = 0.25\%\]</span></p>
+</div>
+<div id="dependent-events-and-conditional-probability" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Dependent Events and Conditional Probability<a href="probability.html#dependent-events-and-conditional-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>dependent</strong> if the occurrence of one affects the probability of the other. In this case, we need <strong>conditional probability</strong>.</p>
+<p>The <strong>conditional probability</strong> of event <span class="math inline">\(B\)</span> given that event <span class="math inline">\(A\)</span> has already occurred is:</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[P(B \mid A) = \frac{P(A \text{ and } B)}{P(A)}\]</span></p>
+<p>Read “<span class="math inline">\(P(B \mid A)\)</span>” as “the probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span>.”</p>
+<p><strong>General Multiplication Rule (for dependent events):</strong>
+<span class="math display">\[P(A \text{ and } B) = P(A) \times P(B \mid A)\]</span></p>
+</div>
+<p><strong>Example:</strong> A shipment contains 20 items, of which 3 are defective. Two items are drawn <strong>without replacement</strong> (dependent events, because removing the first item changes the composition of the remaining items).</p>
+<p><span class="math inline">\(P(\text{1st is defective}) = 3/20 = 0.15\)</span></p>
+<p><span class="math inline">\(P(\text{2nd is defective} \mid \text{1st was defective}) = 2/19\)</span> (only 2 defective remain out of 19 items)</p>
+<p><span class="math inline">\(P(\text{both defective}) = \frac{3}{20} \times \frac{2}{19} = \frac{6}{380} \approx 0.0158\)</span></p>
+</div>
+</div>
+<div id="contingency-tables" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Contingency Tables<a href="probability.html#contingency-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>contingency table</strong> (also called a cross-tabulation or two-way table) displays joint frequencies for two categorical variables simultaneously. It is one of the most useful tools for computing probabilities from observed data.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+A retail company surveys 400 customers about their preferred shopping channel and their age group.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Under 35</th>
+<th>35 or Older</th>
+<th><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Online</strong></td>
+<td>140</td>
+<td>80</td>
+<td><strong>220</strong></td>
+</tr>
+<tr class="even">
+<td><strong>In-Store</strong></td>
+<td>60</td>
+<td>120</td>
+<td><strong>180</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>200</strong></td>
+<td><strong>200</strong></td>
+<td><strong>400</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>joint probability</strong> of two events is the probability they both occur. Here, the probability that a randomly selected customer is under 35 AND prefers online shopping:
+<span class="math display">\[P(\text{Under 35 and Online}) = \frac{140}{400} = 0.35\]</span></p>
+<p>A <strong>marginal probability</strong> is the probability of a single event, obtained from the row or column totals:
+<span class="math display">\[P(\text{Online}) = \frac{220}{400} = 0.55 \qquad P(\text{Under 35}) = \frac{200}{400} = 0.50\]</span></p>
+<p>A <strong>conditional probability</strong> asks: given that the customer is under 35, what is the probability they prefer online shopping?
+<span class="math display">\[P(\text{Online} \mid \text{Under 35}) = \frac{140}{200} = 0.70\]</span></p>
+<p>Compare to: <span class="math inline">\(P(\text{Online} \mid \text{35 or older}) = 80/200 = 0.40\)</span>.</p>
+<p>The fact that these conditional probabilities differ (0.70 vs. 0.40) tells us that shopping channel preference is <strong>not independent</strong> of age — younger customers are much more likely to prefer online shopping.</p>
+</div>
+<p><strong>Testing for independence using a contingency table:</strong>
+Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if and only if:
+<span class="math display">\[P(A \mid B) = P(A) \qquad \text{equivalently, } P(A \text{ and } B) = P(A) \times P(B)\]</span></p>
+<p>If <span class="math inline">\(P(\text{Online} \mid \text{Under 35}) = 0.70 \neq P(\text{Online}) = 0.55\)</span>, the events are dependent.</p>
+</div>
+<div id="tree-diagrams" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Tree Diagrams<a href="probability.html#tree-diagrams" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>tree diagram</strong> is a visual tool for computing probabilities of sequences of events, especially when events are dependent or when there are multiple stages.</p>
+<p>Each <strong>branch</strong> of the tree represents one possible outcome at a stage. The probability of any path through the tree is the product of the probabilities along that path.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+A software company finds that 70% of sales calls result in a scheduled demo, and 40% of demos result in a sale. For a randomly selected initial sales call:</p>
+<p><strong>Stage 1:</strong> Call leads to a demo (probability 0.70) or no demo (probability 0.30).</p>
+<p><strong>Stage 2 (given demo):</strong> Demo leads to a sale (probability 0.40) or no sale (probability 0.60).</p>
+<table>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Demo AND Sale</td>
+<td><span class="math inline">\(0.70 \times 0.40 = 0.28\)</span></td>
+</tr>
+<tr class="even">
+<td>Demo AND No Sale</td>
+<td><span class="math inline">\(0.70 \times 0.60 = 0.42\)</span></td>
+</tr>
+<tr class="odd">
+<td>No Demo</td>
+<td><span class="math inline">\(0.30 \times 1.00 = 0.30\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>1.00</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The probability that a random sales call ultimately results in a sale is <strong>0.28 or 28%</strong>.</p>
+</div>
+</div>
+<div id="excel-for-probability-calculations" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Excel for Probability Calculations<a href="probability.html#excel-for-probability-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Basic Probability Calculations in Excel:</strong></p>
+<p>Excel does not have a dedicated “probability” function for the basic rules, but you can use cell arithmetic. For example:</p>
+<ul>
+<li>Complement rule: If P(A) is in cell B2, then <code>=1-B2</code> gives <span class="math inline">\(P(A^c)\)</span>.</li>
+<li>Addition rule: If P(A) is in B2, P(B) is in B3, and P(A and B) is in B4, then <code>=B2+B3-B4</code> gives <span class="math inline">\(P(A \text{ or } B)\)</span>.</li>
+<li>Multiplication rule (independent): <code>=B2*B3</code> gives <span class="math inline">\(P(A \text{ and } B)\)</span>.</li>
+</ul>
+<p>For contingency tables: enter the joint frequency table into a spreadsheet. Use <code>=B2/SUM(B$2:B$5)</code> style formulas (with mixed references) to convert counts to probabilities. This makes it easy to compute all joint, marginal, and conditional probabilities from one table.</p>
+</div>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Using COUNTIF for Empirical Probability:</strong> If your data is in column A (a list of outcomes), use <code>=COUNTIF(A:A, "outcome")</code> to count how many times a specific outcome occurred, then divide by <code>=COUNT(A:A)</code> to get the empirical probability.</p>
+<p>Example: If column A contains 1,000 rows of “Pass” or “Fail” quality test results:
+<code>=COUNTIF(A2:A1001,"Fail")/COUNT(A2:A1001)</code> gives the empirical probability of a failure.</p>
+<p>For numeric data, use <code>=COUNTIF(A2:A1001,"&gt;100")/COUNT(A2:A1001)</code> to find the proportion of values greater than 100.</p>
+</div>
+<hr />
+<div class="callout key-terms">
+<span class="callout-title">Key Terms</span>
+<dl>
+<dt>
+Probability Experiment
+</dt>
+<dd>
+A process that produces an outcome that cannot be predicted with certainty in advance.
+</dd>
+<dt>
+Sample Space (<span class="math inline">\(S\)</span>)
+</dt>
+<dd>
+The set of all possible outcomes of a probability experiment.
+</dd>
+<dt>
+Event
+</dt>
+<dd>
+A subset of the sample space; one or more outcomes that share a condition of interest.
+</dd>
+<dt>
+Classical Probability
+</dt>
+<dd>
+Probability computed by dividing the number of favorable outcomes by the total number of equally likely outcomes.
+</dd>
+<dt>
+Empirical Probability
+</dt>
+<dd>
+Probability estimated from observed frequencies in historical data.
+</dd>
+<dt>
+Subjective Probability
+</dt>
+<dd>
+A personal estimate of the probability of an event, based on judgment rather than equal outcomes or historical data.
+</dd>
+<dt>
+Complement (<span class="math inline">\(A^c\)</span>)
+</dt>
+<dd>
+The event that <span class="math inline">\(A\)</span> does NOT occur; <span class="math inline">\(P(A^c) = 1 - P(A)\)</span>.
+</dd>
+<dt>
+Mutually Exclusive Events
+</dt>
+<dd>
+Events that cannot both occur at the same time; <span class="math inline">\(P(A \text{ and } B) = 0\)</span>.
+</dd>
+<dt>
+Independent Events
+</dt>
+<dd>
+Events where the occurrence of one has no effect on the probability of the other; <span class="math inline">\(P(B \mid A) = P(B)\)</span>.
+</dd>
+<dt>
+Conditional Probability
+</dt>
+<dd>
+The probability of an event given that another event has already occurred: <span class="math inline">\(P(B \mid A) = P(A \text{ and } B)/P(A)\)</span>.
+</dd>
+<dt>
+Joint Probability
+</dt>
+<dd>
+The probability that two events both occur: <span class="math inline">\(P(A \text{ and } B)\)</span>.
+</dd>
+<dt>
+Marginal Probability
+</dt>
+<dd>
+The overall probability of a single event, obtained from the totals in a contingency table.
+</dd>
+<dt>
+Contingency Table
+</dt>
+<dd>
+A table showing the joint frequency distribution of two categorical variables.
+</dd>
+<dt>
+Tree Diagram
+</dt>
+<dd>
+A visual tool for computing probabilities of multi-stage processes by tracing paths through branches.
+</dd>
+</dl>
+</div>
+<hr />
+</div>
+<div id="exercises-4" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="probability.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>A retail store records the number of customers who make a purchase versus those who browse without buying over 500 visits: 320 make a purchase, 180 do not.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the empirical probability that a random customer makes a purchase?</li>
+<li>What is the probability that a random customer does NOT make a purchase?</li>
+<li>If a second customer walks in independently, what is the probability that both customers make a purchase?</li>
+</ol></li>
+<li><p>At a manufacturing plant, the probability that a machine needs maintenance on any given day is 0.12. On any given day, there are three machines operating independently.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the probability that none of the three machines need maintenance?</li>
+<li>What is the probability that at least one machine needs maintenance? (Use the complement rule.)</li>
+<li>What is the probability that all three machines need maintenance?</li>
+</ol></li>
+<li><p>A survey of 300 small business owners asked about their primary concern. Results: Cash flow (105), Competition (75), Finding talent (60), Regulation (45), Other (15).</p>
+<ol style="list-style-type: lower-alpha">
+<li>Construct a probability distribution table (list each concern with its empirical probability).</li>
+<li>Verify that the probabilities sum to 1.</li>
+<li>What is the probability that a randomly selected owner’s primary concern is either cash flow or competition?</li>
+</ol></li>
+<li><p>Use the following contingency table, which shows customer satisfaction ratings by purchase channel for 500 customers:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Online</th>
+<th>In-Store</th>
+<th><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Satisfied</strong></td>
+<td>165</td>
+<td>180</td>
+<td><strong>345</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Unsatisfied</strong></td>
+<td>85</td>
+<td>70</td>
+<td><strong>155</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>250</strong></td>
+<td><strong>250</strong></td>
+<td><strong>500</strong></td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li>Find: <span class="math inline">\(P(\text{Satisfied})\)</span>, <span class="math inline">\(P(\text{Online})\)</span>, <span class="math inline">\(P(\text{Satisfied and Online})\)</span>.</li>
+<li>Find: <span class="math inline">\(P(\text{Satisfied} \mid \text{Online})\)</span> and <span class="math inline">\(P(\text{Satisfied} \mid \text{In-Store})\)</span>.</li>
+<li>Are channel (Online vs. In-Store) and satisfaction independent? Justify using the independence test.</li>
+</ol></li>
+<li><p>A consulting firm is bidding on two contracts simultaneously. They estimate a 55% chance of winning Contract A and a 40% chance of winning Contract B. They believe the two outcomes are independent.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the probability of winning both contracts?</li>
+<li>What is the probability of winning at least one contract? (Use the general addition rule, or use the complement rule.)</li>
+<li>What is the probability of winning neither contract?</li>
+</ol></li>
+<li><p>A credit card company uses a fraud detection model. It flags 8% of transactions as potentially fraudulent. Of transactions that are truly fraudulent, the model flags 90% of them. Of transactions that are not fraudulent, the model flags 5% of them. Suppose 2% of all transactions are truly fraudulent.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Draw a <strong>tree diagram</strong> with two stages: (1) Is the transaction truly fraudulent? (2) Does the model flag it?</li>
+<li>Find the probability that a randomly selected transaction is: fraudulent AND flagged, not fraudulent AND flagged, not fraudulent AND not flagged, fraudulent AND not flagged.</li>
+<li>Verify that your four probabilities sum to 1.</li>
+<li>If a transaction is flagged by the model, what is the probability it is truly fraudulent? (This is the key business question! Show your work carefully.)</li>
+</ol></li>
+<li><p><em>An e-commerce company runs an A/B test on its checkout page. Version A (current) has a 4.2% conversion rate. Version B (new design) has a 5.8% conversion rate (based on a sample test). In a given hour, 300 visitors see Version A and 300 see Version B. What is the probability that at least one conversion occurs from the Version A visitors? What about Version B? (Assume each visitor converts independently, and use the complement rule.)</em></p></li>
+<li><p><em>A project manager must complete three sequential phases of a project. The probability of completing Phase 1 on time is 0.90. Given Phase 1 is completed on time, the probability of completing Phase 2 on time is 0.80. Given both Phase 1 and Phase 2 are on time, the probability of completing Phase 3 on time is 0.75. What is the probability the entire project is completed on time? Draw a tree diagram and label all branches.</em></p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discrete.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["intro-stats-business.pdf", "intro-stats-business.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

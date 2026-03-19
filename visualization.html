@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Data Visualization | Statistics for Business: A Practical Introduction</title>
+  <meta name="description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Data Visualization | Statistics for Business: A Practical Introduction" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Data Visualization | Statistics for Business: A Practical Introduction" />
+  
+  <meta name="twitter:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+<meta name="author" content="Your Name" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptive.html"/>
+<link rel="next" href="probability.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics for Business</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome-to-statistics-for-business"><i class="fa fa-check"></i>Welcome to Statistics for Business</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-this-book-is-for"><i class="fa fa-check"></i>Who This Book Is For</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-purpose-of-this-book"><i class="fa fa-check"></i>The Purpose of This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-note-about-excel"><i class="fa fa-check"></i>A Note About Excel</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#conventions-used-in-this-book"><i class="fa fa-check"></i>Conventions Used in This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#why-statistics-a-business-perspective"><i class="fa fa-check"></i><b>1.1</b> Why Statistics? A Business Perspective</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-statistics"><i class="fa fa-check"></i><b>1.2</b> What Is Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#inferential-statistics"><i class="fa fa-check"></i><b>1.4</b> Inferential Statistics</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.5</b> Populations and Samples</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#parameters-and-statistics"><i class="fa fa-check"></i><b>1.6</b> Parameters and Statistics</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#the-statistical-process"><i class="fa fa-check"></i><b>1.7</b> The Statistical Process</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#step-1-ask-a-clear-question"><i class="fa fa-check"></i><b>1.7.1</b> Step 1: Ask a Clear Question</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#step-2-collect-data"><i class="fa fa-check"></i><b>1.7.2</b> Step 2: Collect Data</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#step-3-analyze-the-data"><i class="fa fa-check"></i><b>1.7.3</b> Step 3: Analyze the Data</a></li>
+<li class="chapter" data-level="1.7.4" data-path="intro.html"><a href="intro.html#step-4-interpret-and-communicate"><i class="fa fa-check"></i><b>1.7.4</b> Step 4: Interpret and Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>2</b> Data Types and Collection</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data.html"><a href="data.html#data-is-the-raw-material-of-statistics"><i class="fa fa-check"></i><b>2.1</b> Data Is the Raw Material of Statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="data.html"><a href="data.html#qualitative-vs.-quantitative-data"><i class="fa fa-check"></i><b>2.2</b> Qualitative vs. Quantitative Data</a></li>
+<li class="chapter" data-level="2.3" data-path="data.html"><a href="data.html#levels-of-measurement"><i class="fa fa-check"></i><b>2.3</b> Levels of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data.html"><a href="data.html#nominal-scale"><i class="fa fa-check"></i><b>2.3.1</b> Nominal Scale</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data.html"><a href="data.html#ordinal-scale"><i class="fa fa-check"></i><b>2.3.2</b> Ordinal Scale</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data.html"><a href="data.html#interval-scale"><i class="fa fa-check"></i><b>2.3.3</b> Interval Scale</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data.html"><a href="data.html#ratio-scale"><i class="fa fa-check"></i><b>2.3.4</b> Ratio Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data.html"><a href="data.html#cross-sectional-vs.-time-series-data"><i class="fa fa-check"></i><b>2.4</b> Cross-Sectional vs. Time-Series Data</a></li>
+<li class="chapter" data-level="2.5" data-path="data.html"><a href="data.html#primary-vs.-secondary-data"><i class="fa fa-check"></i><b>2.5</b> Primary vs. Secondary Data</a></li>
+<li class="chapter" data-level="2.6" data-path="data.html"><a href="data.html#sampling-methods"><i class="fa fa-check"></i><b>2.6</b> Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data.html"><a href="data.html#simple-random-sampling"><i class="fa fa-check"></i><b>2.6.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data.html"><a href="data.html#systematic-sampling"><i class="fa fa-check"></i><b>2.6.2</b> Systematic Sampling</a></li>
+<li class="chapter" data-level="2.6.3" data-path="data.html"><a href="data.html#stratified-sampling"><i class="fa fa-check"></i><b>2.6.3</b> Stratified Sampling</a></li>
+<li class="chapter" data-level="2.6.4" data-path="data.html"><a href="data.html#cluster-sampling"><i class="fa fa-check"></i><b>2.6.4</b> Cluster Sampling</a></li>
+<li class="chapter" data-level="2.6.5" data-path="data.html"><a href="data.html#convenience-sampling"><i class="fa fa-check"></i><b>2.6.5</b> Convenience Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="data.html"><a href="data.html#surveys-and-questionnaire-design"><i class="fa fa-check"></i><b>2.7</b> Surveys and Questionnaire Design</a></li>
+<li class="chapter" data-level="2.8" data-path="data.html"><a href="data.html#sources-of-bias"><i class="fa fa-check"></i><b>2.8</b> Sources of Bias</a></li>
+<li class="chapter" data-level="" data-path="data.html"><a href="data.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive.html"><a href="descriptive.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive.html"><a href="descriptive.html#from-data-to-understanding"><i class="fa fa-check"></i><b>3.1</b> From Data to Understanding</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive.html"><a href="descriptive.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>3.2</b> Measures of Central Tendency</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="descriptive.html"><a href="descriptive.html#the-mean"><i class="fa fa-check"></i><b>3.2.1</b> The Mean</a></li>
+<li class="chapter" data-level="3.2.2" data-path="descriptive.html"><a href="descriptive.html#the-median"><i class="fa fa-check"></i><b>3.2.2</b> The Median</a></li>
+<li class="chapter" data-level="3.2.3" data-path="descriptive.html"><a href="descriptive.html#the-mode"><i class="fa fa-check"></i><b>3.2.3</b> The Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="descriptive.html"><a href="descriptive.html#the-weighted-mean"><i class="fa fa-check"></i><b>3.3</b> The Weighted Mean</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive.html"><a href="descriptive.html#measures-of-variability"><i class="fa fa-check"></i><b>3.4</b> Measures of Variability</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="descriptive.html"><a href="descriptive.html#the-range"><i class="fa fa-check"></i><b>3.4.1</b> The Range</a></li>
+<li class="chapter" data-level="3.4.2" data-path="descriptive.html"><a href="descriptive.html#variance-and-standard-deviation"><i class="fa fa-check"></i><b>3.4.2</b> Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="descriptive.html"><a href="descriptive.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>3.4.3</b> The Coefficient of Variation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="descriptive.html"><a href="descriptive.html#the-empirical-rule"><i class="fa fa-check"></i><b>3.5</b> The Empirical Rule</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive.html"><a href="descriptive.html#percentiles-and-quartiles"><i class="fa fa-check"></i><b>3.6</b> Percentiles and Quartiles</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive.html"><a href="descriptive.html#the-five-number-summary-and-box-plots"><i class="fa fa-check"></i><b>3.7</b> The Five-Number Summary and Box Plots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive.html"><a href="descriptive.html#excel-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8</b> Excel for Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="descriptive.html"><a href="descriptive.html#using-the-data-analysis-toolpak-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8.1</b> Using the Data Analysis ToolPak for Descriptive Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive.html"><a href="descriptive.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualization.html"><a href="visualization.html#a-picture-is-worth-a-thousand-numbers"><i class="fa fa-check"></i><b>4.1</b> A Picture Is Worth a Thousand Numbers</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions"><i class="fa fa-check"></i><b>4.2</b> Frequency Distributions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-categorical-data"><i class="fa fa-check"></i><b>4.2.1</b> Frequency Distributions for Categorical Data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-quantitative-data"><i class="fa fa-check"></i><b>4.2.2</b> Frequency Distributions for Quantitative Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visualization.html"><a href="visualization.html#histograms"><i class="fa fa-check"></i><b>4.3</b> Histograms</a></li>
+<li class="chapter" data-level="4.4" data-path="visualization.html"><a href="visualization.html#bar-charts"><i class="fa fa-check"></i><b>4.4</b> Bar Charts</a></li>
+<li class="chapter" data-level="4.5" data-path="visualization.html"><a href="visualization.html#pie-charts"><i class="fa fa-check"></i><b>4.5</b> Pie Charts</a></li>
+<li class="chapter" data-level="4.6" data-path="visualization.html"><a href="visualization.html#line-charts-for-time-series"><i class="fa fa-check"></i><b>4.6</b> Line Charts for Time Series</a></li>
+<li class="chapter" data-level="4.7" data-path="visualization.html"><a href="visualization.html#scatter-plots"><i class="fa fa-check"></i><b>4.7</b> Scatter Plots</a></li>
+<li class="chapter" data-level="4.8" data-path="visualization.html"><a href="visualization.html#principles-of-good-data-visualization"><i class="fa fa-check"></i><b>4.8</b> Principles of Good Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Introduction to Probability</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#uncertainty-is-the-business-condition"><i class="fa fa-check"></i><b>5.1</b> Uncertainty Is the Business Condition</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#basic-probability-concepts"><i class="fa fa-check"></i><b>5.2</b> Basic Probability Concepts</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="probability.html"><a href="probability.html#experiments-outcomes-and-sample-spaces"><i class="fa fa-check"></i><b>5.2.1</b> Experiments, Outcomes, and Sample Spaces</a></li>
+<li class="chapter" data-level="5.2.2" data-path="probability.html"><a href="probability.html#the-probability-of-an-event"><i class="fa fa-check"></i><b>5.2.2</b> The Probability of an Event</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#classical-empirical-and-subjective-probability"><i class="fa fa-check"></i><b>5.3</b> Classical, Empirical, and Subjective Probability</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="probability.html"><a href="probability.html#classical-probability"><i class="fa fa-check"></i><b>5.3.1</b> Classical Probability</a></li>
+<li class="chapter" data-level="5.3.2" data-path="probability.html"><a href="probability.html#empirical-probability"><i class="fa fa-check"></i><b>5.3.2</b> Empirical Probability</a></li>
+<li class="chapter" data-level="5.3.3" data-path="probability.html"><a href="probability.html#subjective-probability"><i class="fa fa-check"></i><b>5.3.3</b> Subjective Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#the-complement-rule"><i class="fa fa-check"></i><b>5.4</b> The Complement Rule</a></li>
+<li class="chapter" data-level="5.5" data-path="probability.html"><a href="probability.html#the-addition-rule"><i class="fa fa-check"></i><b>5.5</b> The Addition Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="probability.html"><a href="probability.html#mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.1</b> Mutually Exclusive Events</a></li>
+<li class="chapter" data-level="5.5.2" data-path="probability.html"><a href="probability.html#general-addition-rule-non-mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.2</b> General Addition Rule (Non-Mutually Exclusive Events)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="probability.html"><a href="probability.html#the-multiplication-rule"><i class="fa fa-check"></i><b>5.6</b> The Multiplication Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="probability.html"><a href="probability.html#independent-events"><i class="fa fa-check"></i><b>5.6.1</b> Independent Events</a></li>
+<li class="chapter" data-level="5.6.2" data-path="probability.html"><a href="probability.html#dependent-events-and-conditional-probability"><i class="fa fa-check"></i><b>5.6.2</b> Dependent Events and Conditional Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="probability.html"><a href="probability.html#contingency-tables"><i class="fa fa-check"></i><b>5.7</b> Contingency Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="probability.html"><a href="probability.html#tree-diagrams"><i class="fa fa-check"></i><b>5.8</b> Tree Diagrams</a></li>
+<li class="chapter" data-level="5.9" data-path="probability.html"><a href="probability.html#excel-for-probability-calculations"><i class="fa fa-check"></i><b>5.9</b> Excel for Probability Calculations</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete.html"><a href="discrete.html"><i class="fa fa-check"></i><b>6</b> Discrete Probability Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete.html"><a href="discrete.html#from-events-to-distributions"><i class="fa fa-check"></i><b>6.1</b> From Events to Distributions</a></li>
+<li class="chapter" data-level="6.2" data-path="discrete.html"><a href="discrete.html#random-variables"><i class="fa fa-check"></i><b>6.2</b> Random Variables</a></li>
+<li class="chapter" data-level="6.3" data-path="discrete.html"><a href="discrete.html#probability-distribution-tables"><i class="fa fa-check"></i><b>6.3</b> Probability Distribution Tables</a></li>
+<li class="chapter" data-level="6.4" data-path="discrete.html"><a href="discrete.html#expected-value-mean-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.4</b> Expected Value (Mean) of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.5" data-path="discrete.html"><a href="discrete.html#variance-and-standard-deviation-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.5</b> Variance and Standard Deviation of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.6" data-path="discrete.html"><a href="discrete.html#expected-value-in-business-decision-making"><i class="fa fa-check"></i><b>6.6</b> Expected Value in Business Decision Making</a></li>
+<li class="chapter" data-level="6.7" data-path="discrete.html"><a href="discrete.html#the-binomial-distribution"><i class="fa fa-check"></i><b>6.7</b> The Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-binomial-distribution"><i class="fa fa-check"></i><b>6.7.1</b> Conditions for a Binomial Distribution</a></li>
+<li class="chapter" data-level="6.7.2" data-path="discrete.html"><a href="discrete.html#binomial-probability-formula"><i class="fa fa-check"></i><b>6.7.2</b> Binomial Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="discrete.html"><a href="discrete.html#the-poisson-distribution"><i class="fa fa-check"></i><b>6.8</b> The Poisson Distribution</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-poisson-distribution"><i class="fa fa-check"></i><b>6.8.1</b> Conditions for a Poisson Distribution</a></li>
+<li class="chapter" data-level="6.8.2" data-path="discrete.html"><a href="discrete.html#poisson-probability-formula"><i class="fa fa-check"></i><b>6.8.2</b> Poisson Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="discrete.html"><a href="discrete.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="normal.html"><a href="normal.html"><i class="fa fa-check"></i><b>7</b> The Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="normal.html"><a href="normal.html#the-most-important-distribution-in-statistics"><i class="fa fa-check"></i><b>7.1</b> The Most Important Distribution in Statistics</a></li>
+<li class="chapter" data-level="7.2" data-path="normal.html"><a href="normal.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="7.3" data-path="normal.html"><a href="normal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>7.3</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="7.4" data-path="normal.html"><a href="normal.html#z-scores"><i class="fa fa-check"></i><b>7.4</b> Z-Scores</a></li>
+<li class="chapter" data-level="7.5" data-path="normal.html"><a href="normal.html#finding-probabilities-using-z-scores"><i class="fa fa-check"></i><b>7.5</b> Finding Probabilities Using Z-Scores</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="normal.html"><a href="normal.html#using-standard-normal-tables"><i class="fa fa-check"></i><b>7.5.1</b> Using Standard Normal Tables</a></li>
+<li class="chapter" data-level="7.5.2" data-path="normal.html"><a href="normal.html#using-excel-for-normal-probabilities"><i class="fa fa-check"></i><b>7.5.2</b> Using Excel for Normal Probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="normal.html"><a href="normal.html#finding-values-from-probabilities-inverse-normal"><i class="fa fa-check"></i><b>7.6</b> Finding Values from Probabilities (Inverse Normal)</a></li>
+<li class="chapter" data-level="7.7" data-path="normal.html"><a href="normal.html#business-applications-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.7</b> Business Applications of the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="normal.html"><a href="normal.html#quality-control"><i class="fa fa-check"></i><b>7.7.1</b> Quality Control</a></li>
+<li class="chapter" data-level="7.7.2" data-path="normal.html"><a href="normal.html#financial-returns"><i class="fa fa-check"></i><b>7.7.2</b> Financial Returns</a></li>
+<li class="chapter" data-level="7.7.3" data-path="normal.html"><a href="normal.html#employee-assessment"><i class="fa fa-check"></i><b>7.7.3</b> Employee Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="normal.html"><a href="normal.html#normal-approximation-to-the-binomial"><i class="fa fa-check"></i><b>7.8</b> Normal Approximation to the Binomial</a></li>
+<li class="chapter" data-level="" data-path="normal.html"><a href="normal.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>8</b> Sampling Distributions and the Central Limit Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sampling.html"><a href="sampling.html#from-samples-to-inference"><i class="fa fa-check"></i><b>8.1</b> From Samples to Inference</a></li>
+<li class="chapter" data-level="8.2" data-path="sampling.html"><a href="sampling.html#sampling-error"><i class="fa fa-check"></i><b>8.2</b> Sampling Error</a></li>
+<li class="chapter" data-level="8.3" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-mean"><i class="fa fa-check"></i><b>8.3</b> The Sampling Distribution of the Sample Mean</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sampling.html"><a href="sampling.html#mean-and-standard-error-of-barx"><i class="fa fa-check"></i><b>8.3.1</b> Mean and Standard Error of <span class="math inline">\(\bar{x}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="sampling.html"><a href="sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>8.4</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="8.5" data-path="sampling.html"><a href="sampling.html#applying-the-clt-to-business-problems"><i class="fa fa-check"></i><b>8.5</b> Applying the CLT to Business Problems</a></li>
+<li class="chapter" data-level="8.6" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-proportion"><i class="fa fa-check"></i><b>8.6</b> The Sampling Distribution of the Sample Proportion</a></li>
+<li class="chapter" data-level="8.7" data-path="sampling.html"><a href="sampling.html#excel-simulation-to-illustrate-the-clt"><i class="fa fa-check"></i><b>8.7</b> Excel Simulation to Illustrate the CLT</a></li>
+<li class="chapter" data-level="" data-path="sampling.html"><a href="sampling.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#estimation-and-uncertainty"><i class="fa fa-check"></i><b>9.1</b> Estimation and Uncertainty</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-concept-of-a-confidence-interval"><i class="fa fa-check"></i><b>9.2</b> The Concept of a Confidence Interval</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#what-does-95-confidence-mean"><i class="fa fa-check"></i><b>9.2.1</b> What Does “95% Confidence” Mean?</a></li>
+<li class="chapter" data-level="9.2.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-confidence-level-and-critical-values"><i class="fa fa-check"></i><b>9.2.2</b> The Confidence Level and Critical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>9.3</b> Confidence Interval for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-t-distribution-and-confidence-interval-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>9.4</b> The t-Distribution and Confidence Interval for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#properties-of-the-t-distribution"><i class="fa fa-check"></i><b>9.4.1</b> Properties of the t-Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-proportion"><i class="fa fa-check"></i><b>9.5</b> Confidence Interval for a Population Proportion</a></li>
+<li class="chapter" data-level="9.6" data-path="confidence-intervals.html"><a href="confidence-intervals.html#choosing-sample-size"><i class="fa fa-check"></i><b>9.6</b> Choosing Sample Size</a></li>
+<li class="chapter" data-level="9.7" data-path="confidence-intervals.html"><a href="confidence-intervals.html#interpreting-confidence-intervals-in-business-reports"><i class="fa fa-check"></i><b>9.7</b> Interpreting Confidence Intervals in Business Reports</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hypothesis-one.html"><a href="hypothesis-one.html"><i class="fa fa-check"></i><b>10</b> Hypothesis Testing — One Sample</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.1</b> The Logic of Hypothesis Testing</a></li>
+<li class="chapter" data-level="10.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-and-structure-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.2</b> The Logic and Structure of Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-1-state-the-hypotheses"><i class="fa fa-check"></i><b>10.2.1</b> Step 1: State the Hypotheses</a></li>
+<li class="chapter" data-level="10.2.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>10.2.2</b> One-Tailed vs. Two-Tailed Tests</a></li>
+<li class="chapter" data-level="10.2.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-2-set-the-significance-level"><i class="fa fa-check"></i><b>10.2.3</b> Step 2: Set the Significance Level</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#type-i-and-type-ii-errors"><i class="fa fa-check"></i><b>10.3</b> Type I and Type II Errors</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-3-compute-the-test-statistic"><i class="fa fa-check"></i><b>10.3.1</b> Step 3: Compute the Test Statistic</a></li>
+<li class="chapter" data-level="10.3.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-4-find-the-p-value"><i class="fa fa-check"></i><b>10.3.2</b> Step 4: Find the P-value</a></li>
+<li class="chapter" data-level="10.3.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-5-make-a-decision"><i class="fa fa-check"></i><b>10.3.3</b> Step 5: Make a Decision</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>10.4</b> Z-Test for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="10.5" data-path="hypothesis-one.html"><a href="hypothesis-one.html#t-test-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>10.5</b> t-Test for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#using-excels-data-analysis-toolpak-for-t-tests"><i class="fa fa-check"></i><b>10.5.1</b> Using Excel’s Data Analysis ToolPak for t-Tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-proportion"><i class="fa fa-check"></i><b>10.6</b> Z-Test for a Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-one.html"><a href="hypothesis-one.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-two.html"><a href="hypothesis-two.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing — Two Samples</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#comparing-two-groups"><i class="fa fa-check"></i><b>11.1</b> Comparing Two Groups</a></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#independent-vs.-paired-samples"><i class="fa fa-check"></i><b>11.2</b> Independent vs. Paired Samples</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-t-test-for-independent-means"><i class="fa fa-check"></i><b>11.3</b> Two-Sample t-Test for Independent Means</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-1-equal-variances-pooled-t-test"><i class="fa fa-check"></i><b>11.3.1</b> Case 1: Equal Variances (Pooled t-Test)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-2-unequal-variances-welchs-t-test"><i class="fa fa-check"></i><b>11.3.2</b> Case 2: Unequal Variances (Welch’s t-Test)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="hypothesis-two.html"><a href="hypothesis-two.html#the-paired-t-test"><i class="fa fa-check"></i><b>11.4</b> The Paired t-Test</a></li>
+<li class="chapter" data-level="11.5" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-z-test-for-proportions"><i class="fa fa-check"></i><b>11.5</b> Two-Sample Z-Test for Proportions</a></li>
+<li class="chapter" data-level="11.6" data-path="hypothesis-two.html"><a href="hypothesis-two.html#effect-size-cohens-d"><i class="fa fa-check"></i><b>11.6</b> Effect Size: Cohen’s d</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-two.html"><a href="hypothesis-two.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>12</b> Correlation and Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="regression.html"><a href="regression.html#relationships-between-variables"><i class="fa fa-check"></i><b>12.1</b> Relationships Between Variables</a></li>
+<li class="chapter" data-level="12.2" data-path="regression.html"><a href="regression.html#scatter-plots-and-relationships"><i class="fa fa-check"></i><b>12.2</b> Scatter Plots and Relationships</a></li>
+<li class="chapter" data-level="12.3" data-path="regression.html"><a href="regression.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>12.3</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="12.4" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>12.4</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="regression.html"><a href="regression.html#the-regression-equation"><i class="fa fa-check"></i><b>12.4.1</b> The Regression Equation</a></li>
+<li class="chapter" data-level="12.4.2" data-path="regression.html"><a href="regression.html#the-least-squares-method"><i class="fa fa-check"></i><b>12.4.2</b> The Least Squares Method</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="regression.html"><a href="regression.html#interpreting-the-slope-and-intercept"><i class="fa fa-check"></i><b>12.5</b> Interpreting the Slope and Intercept</a></li>
+<li class="chapter" data-level="12.6" data-path="regression.html"><a href="regression.html#the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>12.6</b> The Coefficient of Determination (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="12.7" data-path="regression.html"><a href="regression.html#residuals-and-checking-model-fit"><i class="fa fa-check"></i><b>12.7</b> Residuals and Checking Model Fit</a></li>
+<li class="chapter" data-level="12.8" data-path="regression.html"><a href="regression.html#making-predictions-and-understanding-their-limits"><i class="fa fa-check"></i><b>12.8</b> Making Predictions and Understanding Their Limits</a></li>
+<li class="chapter" data-level="12.9" data-path="regression.html"><a href="regression.html#excel-for-regression-analysis"><i class="fa fa-check"></i><b>12.9</b> Excel for Regression Analysis</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>13</b> Chi-Square Tests</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="chi-square.html"><a href="chi-square.html#when-the-data-is-categorical"><i class="fa fa-check"></i><b>13.1</b> When the Data Is Categorical</a></li>
+<li class="chapter" data-level="13.2" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-statistic"><i class="fa fa-check"></i><b>13.2</b> The Chi-Square Statistic</a></li>
+<li class="chapter" data-level="13.3" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>13.3</b> The Chi-Square Goodness-of-Fit Test</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="chi-square.html"><a href="chi-square.html#concept"><i class="fa fa-check"></i><b>13.3.1</b> Concept</a></li>
+<li class="chapter" data-level="13.3.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies"><i class="fa fa-check"></i><b>13.3.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.3.3" data-path="chi-square.html"><a href="chi-square.html#degrees-of-freedom"><i class="fa fa-check"></i><b>13.3.3</b> Degrees of Freedom</a></li>
+<li class="chapter" data-level="13.3.4" data-path="chi-square.html"><a href="chi-square.html#conditions"><i class="fa fa-check"></i><b>13.3.4</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.4</b> The Chi-Square Test of Independence</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="chi-square.html"><a href="chi-square.html#concept-1"><i class="fa fa-check"></i><b>13.4.1</b> Concept</a></li>
+<li class="chapter" data-level="13.4.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies-1"><i class="fa fa-check"></i><b>13.4.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.4.3" data-path="chi-square.html"><a href="chi-square.html#conditions-1"><i class="fa fa-check"></i><b>13.4.3</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="chi-square.html"><a href="chi-square.html#excel-for-chi-square-tests"><i class="fa fa-check"></i><b>13.5</b> Excel for Chi-Square Tests</a></li>
+<li class="chapter" data-level="13.6" data-path="chi-square.html"><a href="chi-square.html#business-applications"><i class="fa fa-check"></i><b>13.6</b> Business Applications</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="chi-square.html"><a href="chi-square.html#market-research"><i class="fa fa-check"></i><b>13.6.1</b> Market Research</a></li>
+<li class="chapter" data-level="13.6.2" data-path="chi-square.html"><a href="chi-square.html#customer-satisfaction-analysis"><i class="fa fa-check"></i><b>13.6.2</b> Customer Satisfaction Analysis</a></li>
+<li class="chapter" data-level="13.6.3" data-path="chi-square.html"><a href="chi-square.html#quality-control-1"><i class="fa fa-check"></i><b>13.6.3</b> Quality Control</a></li>
+<li class="chapter" data-level="13.6.4" data-path="chi-square.html"><a href="chi-square.html#human-resources"><i class="fa fa-check"></i><b>13.6.4</b> Human Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Business: A Practical Introduction</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualization" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Data Visualization<a href="visualization.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="a-picture-is-worth-a-thousand-numbers" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> A Picture Is Worth a Thousand Numbers<a href="visualization.html#a-picture-is-worth-a-thousand-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A spreadsheet full of numbers is hard to absorb. A well-constructed chart makes patterns immediately visible — the seasonal spike in holiday sales, the steady upward trend in website traffic, the department whose cost variance is wildly out of line with the others. Data visualization translates numbers into pictures that support faster, better decision-making.</p>
+<p>In this chapter, we build the toolkit of standard business charts, learn how to construct them in Excel, and — just as importantly — learn when each type of chart is and is not appropriate. We also introduce <strong>frequency distributions</strong>, which underlie several chart types and form a bridge between raw data and graphical summary.</p>
+</div>
+<div id="frequency-distributions" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Frequency Distributions<a href="visualization.html#frequency-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we can draw a histogram or discuss a bar chart meaningfully, we need to understand how to organize data into a <strong>frequency distribution</strong> — a table that shows how often each value (or range of values) occurs.</p>
+<div id="frequency-distributions-for-categorical-data" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Frequency Distributions for Categorical Data<a href="visualization.html#frequency-distributions-for-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For qualitative data, simply count how many observations fall into each category.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+A clothing store records the payment method for 200 transactions:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Payment Method</th>
+<th>Frequency</th>
+<th>Relative Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Credit Card</td>
+<td>102</td>
+<td>102/200 = 51.0%</td>
+</tr>
+<tr class="even">
+<td>Debit Card</td>
+<td>54</td>
+<td>54/200 = 27.0%</td>
+</tr>
+<tr class="odd">
+<td>Mobile Payment</td>
+<td>28</td>
+<td>28/200 = 14.0%</td>
+</tr>
+<tr class="even">
+<td>Cash</td>
+<td>16</td>
+<td>16/200 = 8.0%</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>200</strong></td>
+<td><strong>100.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>relative frequency</strong> of a category is its frequency divided by the total number of observations: <span class="math inline">\(\text{Relative Frequency} = f / n\)</span>.</p>
+</div>
+</div>
+<div id="frequency-distributions-for-quantitative-data" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Frequency Distributions for Quantitative Data<a href="visualization.html#frequency-distributions-for-quantitative-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For numerical data, we group values into <strong>classes</strong> (also called bins or intervals) and count how many observations fall in each class.</p>
+<p><strong>Rules for constructing a frequency distribution for quantitative data:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Use between <strong>5 and 20 classes</strong> — enough to show the shape of the distribution, but not so many that the pattern is lost.</li>
+<li>Make all classes the same <strong>width</strong> (when possible).</li>
+<li>Classes should be <strong>mutually exclusive</strong> (no overlap) and <strong>exhaustive</strong> (every value fits in exactly one class).</li>
+</ol>
+<p><strong>Class width formula:</strong>
+<span class="math display">\[\text{Class width} \approx \frac{\text{Maximum} - \text{Minimum}}{\text{Number of classes}}\]</span>
+Round up to a convenient number.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+Customer wait times (in minutes) for 30 service calls: 2.1, 4.7, 1.8, 6.3, 3.5, 8.1, 5.2, 2.9, 7.4, 3.1, 4.0, 5.8, 6.7, 1.5, 9.2, 4.4, 3.8, 7.0, 2.6, 5.5, 8.8, 3.3, 6.1, 4.9, 2.2, 7.6, 5.0, 1.9, 8.5, 4.2.</p>
+<p>Min = 1.5, Max = 9.2. Using 5 classes: width ≈ (9.2 − 1.5)/5 = 1.54, round up to 2.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Class (minutes)</th>
+<th>Frequency</th>
+<th>Relative Frequency</th>
+<th>Cumulative Freq.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.5 – &lt; 3.5</td>
+<td>7</td>
+<td>23.3%</td>
+<td>23.3%</td>
+</tr>
+<tr class="even">
+<td>3.5 – &lt; 5.5</td>
+<td>11</td>
+<td>36.7%</td>
+<td>60.0%</td>
+</tr>
+<tr class="odd">
+<td>5.5 – &lt; 7.5</td>
+<td>7</td>
+<td>23.3%</td>
+<td>83.3%</td>
+</tr>
+<tr class="even">
+<td>7.5 – &lt; 9.5</td>
+<td>5</td>
+<td>16.7%</td>
+<td>100.0%</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>30</strong></td>
+<td><strong>100.0%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>cumulative relative frequency</strong> column shows the percentage of observations up through (and including) that class. For example, 60% of calls were resolved in less than 5.5 minutes.</p>
+</div>
+</div>
+</div>
+<div id="histograms" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Histograms<a href="visualization.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>histogram</strong> is a graphical representation of a frequency distribution for quantitative data. It uses adjacent vertical bars (rectangles) where:
+- The <strong>horizontal axis</strong> shows the class intervals (bins)
+- The <strong>height of each bar</strong> represents the frequency (or relative frequency) of observations in that class
+- There are <strong>no gaps</strong> between bars (unlike bar charts)</p>
+<p>The absence of gaps signals that the data is continuous — values flow from one class to the next without a break.</p>
+<p><strong>Interpreting a histogram:</strong> Look for:
+- <strong>Shape:</strong> Is the distribution symmetric (bell-shaped), right-skewed (long tail to the right), or left-skewed?
+- <strong>Center:</strong> Where is the bulk of the data?
+- <strong>Spread:</strong> How wide is the distribution?
+- <strong>Outliers:</strong> Are there isolated bars far from the main body of the data?</p>
+<p><strong>Right-skewed</strong> distributions (common with income, sales revenue, wait times) have a long tail extending to the right. The mean is pulled higher than the median. <strong>Left-skewed</strong> distributions have a long tail to the left. A <strong>symmetric</strong> distribution has tails of roughly equal length on both sides.</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Creating a Histogram Using the Data Analysis ToolPak:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Enter your data in column A (e.g., A2:A31).</li>
+<li>Create a “Bin” column in column B listing the upper boundary of each class: 3.5, 5.5, 7.5, 9.5.</li>
+<li>Click <strong>Data → Data Analysis → Histogram</strong> → <strong>OK</strong>.</li>
+<li>Set <strong>Input Range</strong> to your data (A2:A31), <strong>Bin Range</strong> to your bin column (B2:B5).</li>
+<li>Check <strong>Labels</strong> if your range includes headers.</li>
+<li>Under Output options, select <strong>New Worksheet Ply</strong> or choose an output range.</li>
+<li>Check <strong>Chart Output</strong> to automatically generate a histogram chart.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p><strong>Formatting tip:</strong> Right-click on one of the bars, select <strong>Format Data Series</strong>, and set the <strong>Gap Width</strong> to 0% to remove the gaps between bars (histograms should have no gaps).</p>
+</div>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Histogram in Excel 2016+:</strong> In Excel 2016 and later, you can insert a histogram directly: select your raw data, go to <strong>Insert → Charts → Insert Statistic Chart → Histogram</strong>. Excel automatically determines the bin widths. Right-click the horizontal axis and select <strong>Format Axis</strong> to customize the number of bins or set specific bin boundaries.</p>
+</div>
+</div>
+<div id="bar-charts" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Bar Charts<a href="visualization.html#bar-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>bar chart</strong> (or bar graph) displays the frequency or relative frequency of <strong>categorical</strong> data. Each category has its own bar, and the <strong>height</strong> of the bar represents the category’s count or percentage.</p>
+<p><strong>Key differences between bar charts and histograms:</strong>
+- Bar charts: for <strong>categorical</strong> data; bars have <strong>gaps</strong> between them to emphasize that categories are distinct.
+- Histograms: for <strong>quantitative</strong> continuous data; bars are <strong>adjacent</strong> to emphasize the continuous flow of values.</p>
+<p>Bar charts can be displayed vertically (most common) or horizontally. Horizontal bar charts work well when category names are long.</p>
+<p><strong>Best practices for bar charts:</strong>
+- Start the value axis at zero to avoid visually exaggerating differences.
+- Sort bars by frequency (descending) if there is no natural ordering, to make the most common categories immediately visible.
+- Label bars with values when the exact number matters.
+- Use consistent colors; don’t add colors just for decoration.</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Creating a Bar Chart in Excel:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Select your frequency table (category labels and counts), for example A1:B5.</li>
+<li>Go to <strong>Insert → Charts</strong> and select <strong>Clustered Bar</strong> (horizontal) or <strong>Clustered Column</strong> (vertical).</li>
+<li>To sort bars by frequency: sort your frequency table in descending order before making the chart, or sort the table and the chart will update automatically.</li>
+<li>Right-click the chart to access <strong>Format Chart Area</strong>, <strong>Format Data Series</strong>, and other customization options.</li>
+<li>Add a chart title by clicking the chart, then <strong>Chart Design → Add Chart Element → Chart Title</strong>.</li>
+</ol>
+</div>
+</div>
+<div id="pie-charts" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Pie Charts<a href="visualization.html#pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>pie chart</strong> displays parts of a whole as slices of a circle. Each slice’s angle is proportional to its percentage of the total.</p>
+<p>Pie charts are appropriate when:
+- You have <strong>categorical data</strong>
+- You want to show <strong>parts of a whole</strong> (proportions that sum to 100%)
+- You have <strong>few categories</strong> (ideally 5 or fewer)
+- The differences between categories are <strong>substantial</strong></p>
+<div class="callout warning-box">
+<p><span class="callout-title">Caution</span>
+<strong>When NOT to use pie charts:</strong></p>
+<ul>
+<li>When you have many categories (slices become too small to read)</li>
+<li>When differences between slices are small (humans are poor at comparing angles)</li>
+<li>When you want to compare multiple groups side-by-side</li>
+<li>When absolute values (not proportions) are what matters</li>
+</ul>
+<p>Many data visualization experts recommend using a bar chart instead of a pie chart in most situations — bars are easier to read and compare accurately than slices. The pie chart is frequently misused. If you find yourself reaching for a pie chart, ask first: “Would a bar chart communicate this more clearly?”</p>
+</div>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Creating a Pie Chart in Excel:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Select your categories and their frequencies or percentages.</li>
+<li>Go to <strong>Insert → Charts → Pie</strong> and choose <strong>2-D Pie</strong>.</li>
+<li>Right-click on a slice and select <strong>Add Data Labels</strong>.</li>
+<li>In <strong>Format Data Labels</strong>, check <strong>Percentage</strong> to show percentages instead of counts.</li>
+<li>To explode a slice for emphasis, click a slice twice (slowly) to select just that slice, then drag it outward.</li>
+</ol>
+</div>
+</div>
+<div id="line-charts-for-time-series" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Line Charts for Time Series<a href="visualization.html#line-charts-for-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>line chart</strong> plots a variable over time, with time on the horizontal axis and the variable’s value on the vertical axis. Points are connected by lines to emphasize the trend or pattern over time.</p>
+<p>Line charts are ideal for:
+- Showing trends (upward, downward, cyclical)
+- Displaying seasonal patterns (retail sales spike in December)
+- Comparing how two or more variables change over time</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+A coffee shop chain tracks average monthly sales revenue per location over 24 months. A line chart would immediately reveal whether revenue is trending upward, whether there are seasonal dips in summer, and whether revenue growth has been accelerating or flattening recently. These insights would be nearly impossible to extract from a table of 24 numbers.</p>
+</div>
+<p><strong>Best practices for line charts:</strong>
+- Always label the axes with the variable name and units.
+- If showing multiple lines, use a legend and differentiate lines with color and/or line styles.
+- Avoid using lines to connect categorical data (that creates a false impression of continuity).</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Creating a Line Chart in Excel:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Enter your time labels (e.g., Jan, Feb, Mar…) in column A and your values in column B.</li>
+<li>Select both columns and go to <strong>Insert → Charts → Line → Line with Markers</strong>.</li>
+<li>Right-click the horizontal axis and select <strong>Format Axis</strong> if you need to adjust how dates or labels appear.</li>
+<li>To add a trend line: right-click on the data series (the line itself), select <strong>Add Trendline</strong>, and choose from Linear, Exponential, Moving Average, etc. Check <strong>Display R-squared value</strong> to see how well the trend line fits.</li>
+</ol>
+</div>
+</div>
+<div id="scatter-plots" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Scatter Plots<a href="visualization.html#scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>scatter plot</strong> (or scatter diagram) displays the relationship between <strong>two quantitative variables</strong>. Each observation becomes a single point, with one variable on the horizontal axis (<span class="math inline">\(x\)</span>) and the other on the vertical axis (<span class="math inline">\(y\)</span>).</p>
+<p>Scatter plots help answer questions like:
+- Does advertising spending seem related to sales revenue?
+- Do larger store locations generate more revenue?
+- Is there a relationship between employee satisfaction and productivity?</p>
+<p>When interpreting a scatter plot, note:
+- <strong>Direction:</strong> Do the points trend upward (positive association) or downward (negative association), or is there no clear direction?
+- <strong>Strength:</strong> Are the points clustered tightly along a line (strong relationship) or scattered loosely (weak relationship)?
+- <strong>Form:</strong> Is the relationship roughly linear, or does it curve?
+- <strong>Outliers:</strong> Are there any points far from the main cluster?</p>
+<p>We study correlation and regression — the formal statistical follow-up to scatter plot analysis — in Chapter 12.</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Creating a Scatter Plot in Excel:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Put your <span class="math inline">\(x\)</span>-variable values in column A and your <span class="math inline">\(y\)</span>-variable values in column B (same row for each observation).</li>
+<li>Select both columns and go to <strong>Insert → Charts → Scatter → Scatter (points only)</strong>.</li>
+<li>Label the axes: click the chart, then <strong>Chart Design → Add Chart Element → Axis Titles</strong>.</li>
+<li>To add a regression line (trendline): right-click on any data point, select <strong>Add Trendline → Linear</strong>, and optionally check <strong>Display Equation on chart</strong> and <strong>Display R-squared value on chart</strong>.</li>
+</ol>
+</div>
+</div>
+<div id="principles-of-good-data-visualization" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Principles of Good Data Visualization<a href="visualization.html#principles-of-good-data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A chart is a communication tool. Its purpose is to help the reader understand the data. Every design choice should serve that purpose. Here are the most important principles:</p>
+<p><strong>1. Choose the right chart type.</strong> Match the chart type to your data type and your question. Categorical data → bar or pie. Quantitative distribution → histogram. Time trend → line. Relationship between variables → scatter plot.</p>
+<p><strong>2. Start the axis at zero (for bar charts).</strong> When the vertical axis of a bar chart starts above zero, differences between bars are visually exaggerated. A bar that is twice as tall as another should represent twice as large a value — this only works if the axis starts at zero.</p>
+<p><strong>3. Avoid chart junk.</strong> “Chart junk” (a term coined by statistician Edward Tufte) refers to unnecessary visual elements that add clutter without adding information: excessive gridlines, decorative 3D effects, patterned fills, irrelevant background images. Simplicity serves clarity.</p>
+<p><strong>4. Label everything.</strong> Every chart needs: a title, labeled axes (with units), and a legend if there are multiple series. Never leave the reader guessing what a chart is about.</p>
+<p><strong>5. Use color purposefully.</strong> Color should encode information (e.g., different colors for different groups) or draw attention to something important. Do not add color just for decoration. Also, be aware that some readers may be color-blind; using both color and shape or pattern to differentiate series makes charts more accessible.</p>
+<p><strong>6. Don’t distort the data.</strong> Using 3D effects, unusual axis scales, or truncated axes can make trends look steeper or differences look larger than they really are. Represent the data honestly.</p>
+<div class="callout warning-box">
+<p><span class="callout-title">Caution</span>
+<strong>3D Charts:</strong> Excel offers 3D versions of bar, pie, and other charts. Avoid them. 3D effects make it harder to accurately read values and compare categories. They add visual noise without adding information. Professional analysts and data visualization experts strongly recommend flat, clean, two-dimensional charts for accuracy and clarity.</p>
+</div>
+<hr />
+<div class="callout key-terms">
+<span class="callout-title">Key Terms</span>
+<dl>
+<dt>
+Frequency Distribution
+</dt>
+<dd>
+A table showing the number of observations falling into each category or class interval.
+</dd>
+<dt>
+Relative Frequency
+</dt>
+<dd>
+The proportion (or percentage) of observations in a given category or class; frequency divided by total observations.
+</dd>
+<dt>
+Cumulative Frequency
+</dt>
+<dd>
+The total frequency of all values up to and including a given class.
+</dd>
+<dt>
+Class / Bin
+</dt>
+<dd>
+An interval used to group quantitative data in a frequency distribution or histogram.
+</dd>
+<dt>
+Histogram
+</dt>
+<dd>
+A bar chart for quantitative data, where adjacent bars (no gaps) represent the frequency of values in each class interval.
+</dd>
+<dt>
+Bar Chart
+</dt>
+<dd>
+A chart for categorical data using separated bars to display the frequency or relative frequency of each category.
+</dd>
+<dt>
+Pie Chart
+</dt>
+<dd>
+A circular chart divided into slices representing each category’s proportion of the total.
+</dd>
+<dt>
+Line Chart
+</dt>
+<dd>
+A chart connecting data points with lines, used to display trends or changes over time.
+</dd>
+<dt>
+Scatter Plot
+</dt>
+<dd>
+A chart plotting pairs of quantitative values as individual points, used to explore the relationship between two variables.
+</dd>
+<dt>
+Skewness
+</dt>
+<dd>
+A measure of asymmetry in a distribution. Right-skewed data has a long tail to the right; left-skewed data has a long tail to the left.
+</dd>
+<dt>
+Chart Junk
+</dt>
+<dd>
+Unnecessary visual elements in charts that add clutter without adding information, reducing clarity.
+</dd>
+</dl>
+</div>
+<hr />
+</div>
+<div id="exercises-3" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="visualization.html#exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>A convenience store tracks sales by product category during one week. The data (in dollars) are: Beverages $1,240, Snacks $890, Tobacco $650, Lottery $430, Other $290.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Create a <strong>frequency distribution table</strong> with relative frequencies.</li>
+<li>Construct a <strong>bar chart</strong> for this data in Excel (Insert → Column chart). Make sure to include a title and axis labels.</li>
+<li>Would a <strong>pie chart</strong> also be appropriate here? Create one in Excel and compare the two charts. Which communicates the information more effectively? Explain.</li>
+</ol></li>
+<li><p>The following are purchase amounts ($) for 25 online orders: 14, 47, 23, 88, 35, 62, 19, 74, 41, 56, 28, 93, 37, 65, 22, 51, 78, 33, 46, 17, 82, 59, 44, 71, 26.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Construct a <strong>frequency distribution</strong> with 5 classes. Show the class boundaries, frequency, relative frequency, and cumulative relative frequency.</li>
+<li>Describe the <strong>shape</strong> of the distribution (symmetric, left-skewed, or right-skewed?).</li>
+<li>Use the <strong>Data Analysis ToolPak</strong> to create a histogram in Excel and compare it with your hand-constructed frequency distribution.</li>
+</ol></li>
+<li><p>The quarterly revenues (in millions of dollars) for a regional retail chain over three years were:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Quarter</th>
+<th>Year 1</th>
+<th>Year 2</th>
+<th>Year 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q1</td>
+<td>12.4</td>
+<td>13.8</td>
+<td>15.2</td>
+</tr>
+<tr class="even">
+<td>Q2</td>
+<td>15.1</td>
+<td>16.7</td>
+<td>18.3</td>
+</tr>
+<tr class="odd">
+<td>Q3</td>
+<td>14.8</td>
+<td>15.9</td>
+<td>17.1</td>
+</tr>
+<tr class="even">
+<td>Q4</td>
+<td>19.6</td>
+<td>21.4</td>
+<td>23.9</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li>Create a <strong>line chart</strong> in Excel showing revenue over all 12 quarters (label the horizontal axis Q1Y1 through Q4Y3).</li>
+<li>What <strong>trend</strong> is visible in the chart?</li>
+<li>What <strong>seasonal pattern</strong>, if any, is apparent?</li>
+</ol></li>
+<li><p>A marketing analyst recorded monthly advertising spending and monthly sales revenue for 12 months:</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Advertising ($000)</th>
+<th>15</th>
+<th>22</th>
+<th>18</th>
+<th>30</th>
+<th>25</th>
+<th>12</th>
+<th>28</th>
+<th>20</th>
+<th>33</th>
+<th>17</th>
+<th>26</th>
+<th>35</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sales ($000)</td>
+<td>142</td>
+<td>198</td>
+<td>171</td>
+<td>253</td>
+<td>221</td>
+<td>118</td>
+<td>238</td>
+<td>187</td>
+<td>274</td>
+<td>155</td>
+<td>215</td>
+<td>298</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li>Create a <strong>scatter plot</strong> in Excel with advertising spending on the horizontal axis and sales revenue on the vertical axis.</li>
+<li>Describe the <strong>direction</strong> and approximate <strong>strength</strong> of the relationship between the two variables.</li>
+<li>Add a <strong>linear trendline</strong> to the scatter plot and display the equation and R² value. What does the R² value suggest?</li>
+</ol></li>
+<li><p>Find a chart in a business news publication (such as the Wall Street Journal, Bloomberg, or a company’s annual report). Print or save a copy.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Identify the <strong>chart type</strong> and the <strong>data type</strong> being displayed.</li>
+<li>Evaluate the chart against at least <strong>three principles of good visualization</strong> discussed in this chapter. Does it follow them?</li>
+<li>Identify at least <strong>one way</strong> the chart could be improved. If possible, recreate an improved version in Excel.</li>
+</ol></li>
+<li><p><em>A company’s annual report shows a bar chart of five-year revenue growth. The vertical axis starts at $950 million and the highest bar reaches $1,050 million. A graph of the same data with the axis starting at zero looks very different.</em></p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the percentage difference between the lowest bar ($960M) and the highest bar ($1,040M).</li>
+<li>With the axis starting at $950M, approximately how many times taller does the highest bar appear compared to the lowest bar in that chart?</li>
+<li>What is the ethical concern with truncating the axis in this way? In what context might it be acceptable?</li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptive.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["intro-stats-business.pdf", "intro-stats-business.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

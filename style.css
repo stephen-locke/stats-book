@@ -1,0 +1,329 @@
+/* ============================================================
+   Statistics for Business — Textbook Stylesheet
+   Clean, professional design for undergraduate business students
+   ============================================================ */
+
+/* ---------- Google Fonts Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap');
+
+/* ---------- Root Variables ---------- */
+:root {
+  --primary-blue:    #1a3a5c;   /* deep navy — headers, accents */
+  --accent-blue:     #2e6da4;   /* medium blue — links, highlights */
+  --light-blue-bg:   #e8f4fd;   /* Excel tip boxes */
+  --light-blue-bdr:  #90c6e8;
+  --light-yellow-bg: #fffbe6;   /* Note / warning boxes */
+  --light-yellow-bdr:#f0d060;
+  --light-green-bg:  #edf7ed;   /* Formula boxes */
+  --light-green-bdr: #7ec87e;
+  --light-red-bg:    #fdf0f0;   /* Warning / caution boxes */
+  --light-red-bdr:   #e08080;
+  --body-text:       #222222;
+  --subtle-gray:     #f5f5f5;
+  --border-gray:     #dddddd;
+  --chapter-stripe:  #f0f4f8;
+}
+
+/* ---------- Base Typography ---------- */
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--body-text);
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 1.1em 0;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2.1em; border-bottom: 3px solid var(--accent-blue); padding-bottom: 0.25em; }
+h2 { font-size: 1.55em; border-left: 5px solid var(--accent-blue); padding-left: 0.5em; }
+h3 { font-size: 1.25em; color: var(--accent-blue); }
+h4 { font-size: 1.05em; text-transform: uppercase; letter-spacing: 0.06em; color: #444; }
+
+/* Chapter number prefix styling (bookdown adds .chapter) */
+.chapter > h1:first-child {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+  color: #ffffff;
+  padding: 0.6em 0.8em;
+  border-radius: 4px;
+  border-bottom: none;
+  margin-bottom: 1em;
+}
+
+/* ---------- Links ---------- */
+a { color: var(--accent-blue); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--primary-blue); }
+
+/* ---------- Code & Inline Code ---------- */
+code, kbd, pre, samp {
+  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-size: 0.88em;
+}
+
+code {
+  background: var(--subtle-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+  color: #c7254e;
+}
+
+pre {
+  background: var(--subtle-gray);
+  border: 1px solid var(--border-gray);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: 4px;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--body-text);
+}
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 0.95em;
+}
+
+thead tr {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+thead th {
+  padding: 0.65em 0.9em;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+tbody tr:nth-child(even) { background-color: var(--chapter-stripe); }
+tbody tr:hover { background-color: #dceeff; }
+
+tbody td {
+  padding: 0.55em 0.9em;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+tfoot td {
+  font-weight: 600;
+  border-top: 2px solid var(--primary-blue);
+  padding: 0.55em 0.9em;
+}
+
+/* ---------- Blockquotes (generic) ---------- */
+blockquote {
+  border-left: 4px solid var(--accent-blue);
+  margin: 1.5em 0;
+  padding: 0.8em 1.2em;
+  background: var(--chapter-stripe);
+  color: #333;
+  font-style: italic;
+}
+
+/* ---------- Callout Box Base ---------- */
+.callout {
+  border-radius: 6px;
+  padding: 1em 1.4em;
+  margin: 1.8em 0;
+  border: 1px solid;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 0.97em;
+  line-height: 1.65;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+/* ---------- Excel Tip Box (light blue) ---------- */
+.excel-tip {
+  background-color: var(--light-blue-bg);
+  border-color: var(--light-blue-bdr);
+  border-left: 5px solid #2e6da4;
+}
+
+.excel-tip .callout-title { color: #1a4a7a; }
+.excel-tip .callout-title::before { content: "💡 Excel Tip  "; }
+
+/* ---------- Key Terms Box ---------- */
+.key-terms {
+  background-color: var(--chapter-stripe);
+  border-color: var(--accent-blue);
+  border-left: 5px solid var(--accent-blue);
+}
+
+.key-terms .callout-title { color: var(--primary-blue); }
+.key-terms .callout-title::before { content: "📖 Key Terms  "; }
+
+.key-terms dt {
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 0.6em;
+}
+
+.key-terms dd {
+  margin-left: 1.5em;
+  color: #333;
+}
+
+/* ---------- Note / Tip Box (light yellow) ---------- */
+.note-box {
+  background-color: var(--light-yellow-bg);
+  border-color: var(--light-yellow-bdr);
+  border-left: 5px solid #c8a800;
+}
+
+.note-box .callout-title { color: #7a6000; }
+.note-box .callout-title::before { content: "📝 Note  "; }
+
+/* ---------- Formula Box (light green) ---------- */
+.formula-box {
+  background-color: var(--light-green-bg);
+  border-color: var(--light-green-bdr);
+  border-left: 5px solid #3a9a3a;
+}
+
+.formula-box .callout-title { color: #1e5c1e; }
+.formula-box .callout-title::before { content: "∑ Formula  "; }
+
+/* ---------- Warning / Caution Box (light red) ---------- */
+.warning-box {
+  background-color: var(--light-red-bg);
+  border-color: var(--light-red-bdr);
+  border-left: 5px solid #cc4444;
+}
+
+.warning-box .callout-title { color: #8b0000; }
+.warning-box .callout-title::before { content: "⚠️ Caution  "; }
+
+/* ---------- Example Box ---------- */
+.example-box {
+  background-color: #f8f4ff;
+  border-color: #b09ad0;
+  border-left: 5px solid #7c5cbf;
+}
+
+.example-box .callout-title { color: #4a2c8a; }
+.example-box .callout-title::before { content: "▶ Example  "; }
+
+/* ---------- Exercises Section ---------- */
+.exercises {
+  background: var(--chapter-stripe);
+  border: 1px solid var(--border-gray);
+  border-top: 4px solid var(--primary-blue);
+  border-radius: 4px;
+  padding: 1.2em 1.6em;
+  margin-top: 2.5em;
+}
+
+.exercises h2, .exercises h3 {
+  color: var(--primary-blue);
+  border-left: none;
+  padding-left: 0;
+}
+
+.exercises ol li {
+  margin-bottom: 0.85em;
+  line-height: 1.65;
+}
+
+/* ---------- Math / LaTeX ---------- */
+.math { font-size: 1.05em; }
+.MathJax_Display { margin: 1em 0 !important; }
+
+/* ---------- Figures and Captions ---------- */
+figure {
+  margin: 1.8em auto;
+  text-align: center;
+}
+
+figcaption, .caption {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 0.88em;
+  color: #555;
+  margin-top: 0.4em;
+  font-style: italic;
+}
+
+/* ---------- Lists ---------- */
+ul, ol {
+  padding-left: 1.6em;
+  margin: 0.5em 0 1em 0;
+}
+
+li { margin-bottom: 0.3em; }
+
+/* ---------- Horizontal Rule ---------- */
+hr {
+  border: none;
+  border-top: 2px solid var(--border-gray);
+  margin: 2em 0;
+}
+
+/* ---------- Bookdown TOC Sidebar (gitbook) ---------- */
+.book .book-summary {
+  background: var(--primary-blue);
+  color: #cde;
+}
+
+.book .book-summary ul.summary li a {
+  color: #c8ddf0;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 0.92em;
+}
+
+.book .book-summary ul.summary li.active > a,
+.book .book-summary ul.summary li a:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.12);
+}
+
+/* ---------- Bookdown Content Area ---------- */
+.book .book-body .page-wrapper .page-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2em 2.5em;
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  body { font-size: 11pt; }
+  h1 { page-break-before: always; }
+  .callout { page-break-inside: avoid; }
+  .exercises { page-break-inside: avoid; }
+  a { color: var(--body-text); text-decoration: none; }
+}
+
+/* ---------- Responsive / Mobile ---------- */
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .book .book-body .page-wrapper .page-inner { padding: 1em 1.2em; }
+  table { font-size: 0.82em; }
+}

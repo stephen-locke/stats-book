@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Descriptive Statistics | Statistics for Business: A Practical Introduction</title>
+  <meta name="description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Descriptive Statistics | Statistics for Business: A Practical Introduction" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Descriptive Statistics | Statistics for Business: A Practical Introduction" />
+  
+  <meta name="twitter:description" content="An introductory statistics textbook for business majors. Covers descriptive statistics, probability, sampling distributions, confidence intervals, hypothesis testing, regression, and chi-square tests. Excel-based, no calculus required." />
+  
+
+<meta name="author" content="Your Name" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data.html"/>
+<link rel="next" href="visualization.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics for Business</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome-to-statistics-for-business"><i class="fa fa-check"></i>Welcome to Statistics for Business</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-this-book-is-for"><i class="fa fa-check"></i>Who This Book Is For</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-purpose-of-this-book"><i class="fa fa-check"></i>The Purpose of This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-note-about-excel"><i class="fa fa-check"></i>A Note About Excel</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#conventions-used-in-this-book"><i class="fa fa-check"></i>Conventions Used in This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#why-statistics-a-business-perspective"><i class="fa fa-check"></i><b>1.1</b> Why Statistics? A Business Perspective</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-statistics"><i class="fa fa-check"></i><b>1.2</b> What Is Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#inferential-statistics"><i class="fa fa-check"></i><b>1.4</b> Inferential Statistics</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.5</b> Populations and Samples</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#parameters-and-statistics"><i class="fa fa-check"></i><b>1.6</b> Parameters and Statistics</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#the-statistical-process"><i class="fa fa-check"></i><b>1.7</b> The Statistical Process</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#step-1-ask-a-clear-question"><i class="fa fa-check"></i><b>1.7.1</b> Step 1: Ask a Clear Question</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#step-2-collect-data"><i class="fa fa-check"></i><b>1.7.2</b> Step 2: Collect Data</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#step-3-analyze-the-data"><i class="fa fa-check"></i><b>1.7.3</b> Step 3: Analyze the Data</a></li>
+<li class="chapter" data-level="1.7.4" data-path="intro.html"><a href="intro.html#step-4-interpret-and-communicate"><i class="fa fa-check"></i><b>1.7.4</b> Step 4: Interpret and Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>2</b> Data Types and Collection</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data.html"><a href="data.html#data-is-the-raw-material-of-statistics"><i class="fa fa-check"></i><b>2.1</b> Data Is the Raw Material of Statistics</a></li>
+<li class="chapter" data-level="2.2" data-path="data.html"><a href="data.html#qualitative-vs.-quantitative-data"><i class="fa fa-check"></i><b>2.2</b> Qualitative vs. Quantitative Data</a></li>
+<li class="chapter" data-level="2.3" data-path="data.html"><a href="data.html#levels-of-measurement"><i class="fa fa-check"></i><b>2.3</b> Levels of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data.html"><a href="data.html#nominal-scale"><i class="fa fa-check"></i><b>2.3.1</b> Nominal Scale</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data.html"><a href="data.html#ordinal-scale"><i class="fa fa-check"></i><b>2.3.2</b> Ordinal Scale</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data.html"><a href="data.html#interval-scale"><i class="fa fa-check"></i><b>2.3.3</b> Interval Scale</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data.html"><a href="data.html#ratio-scale"><i class="fa fa-check"></i><b>2.3.4</b> Ratio Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data.html"><a href="data.html#cross-sectional-vs.-time-series-data"><i class="fa fa-check"></i><b>2.4</b> Cross-Sectional vs. Time-Series Data</a></li>
+<li class="chapter" data-level="2.5" data-path="data.html"><a href="data.html#primary-vs.-secondary-data"><i class="fa fa-check"></i><b>2.5</b> Primary vs. Secondary Data</a></li>
+<li class="chapter" data-level="2.6" data-path="data.html"><a href="data.html#sampling-methods"><i class="fa fa-check"></i><b>2.6</b> Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data.html"><a href="data.html#simple-random-sampling"><i class="fa fa-check"></i><b>2.6.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data.html"><a href="data.html#systematic-sampling"><i class="fa fa-check"></i><b>2.6.2</b> Systematic Sampling</a></li>
+<li class="chapter" data-level="2.6.3" data-path="data.html"><a href="data.html#stratified-sampling"><i class="fa fa-check"></i><b>2.6.3</b> Stratified Sampling</a></li>
+<li class="chapter" data-level="2.6.4" data-path="data.html"><a href="data.html#cluster-sampling"><i class="fa fa-check"></i><b>2.6.4</b> Cluster Sampling</a></li>
+<li class="chapter" data-level="2.6.5" data-path="data.html"><a href="data.html#convenience-sampling"><i class="fa fa-check"></i><b>2.6.5</b> Convenience Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="data.html"><a href="data.html#surveys-and-questionnaire-design"><i class="fa fa-check"></i><b>2.7</b> Surveys and Questionnaire Design</a></li>
+<li class="chapter" data-level="2.8" data-path="data.html"><a href="data.html#sources-of-bias"><i class="fa fa-check"></i><b>2.8</b> Sources of Bias</a></li>
+<li class="chapter" data-level="" data-path="data.html"><a href="data.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive.html"><a href="descriptive.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive.html"><a href="descriptive.html#from-data-to-understanding"><i class="fa fa-check"></i><b>3.1</b> From Data to Understanding</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive.html"><a href="descriptive.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>3.2</b> Measures of Central Tendency</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="descriptive.html"><a href="descriptive.html#the-mean"><i class="fa fa-check"></i><b>3.2.1</b> The Mean</a></li>
+<li class="chapter" data-level="3.2.2" data-path="descriptive.html"><a href="descriptive.html#the-median"><i class="fa fa-check"></i><b>3.2.2</b> The Median</a></li>
+<li class="chapter" data-level="3.2.3" data-path="descriptive.html"><a href="descriptive.html#the-mode"><i class="fa fa-check"></i><b>3.2.3</b> The Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="descriptive.html"><a href="descriptive.html#the-weighted-mean"><i class="fa fa-check"></i><b>3.3</b> The Weighted Mean</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive.html"><a href="descriptive.html#measures-of-variability"><i class="fa fa-check"></i><b>3.4</b> Measures of Variability</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="descriptive.html"><a href="descriptive.html#the-range"><i class="fa fa-check"></i><b>3.4.1</b> The Range</a></li>
+<li class="chapter" data-level="3.4.2" data-path="descriptive.html"><a href="descriptive.html#variance-and-standard-deviation"><i class="fa fa-check"></i><b>3.4.2</b> Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="descriptive.html"><a href="descriptive.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>3.4.3</b> The Coefficient of Variation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="descriptive.html"><a href="descriptive.html#the-empirical-rule"><i class="fa fa-check"></i><b>3.5</b> The Empirical Rule</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive.html"><a href="descriptive.html#percentiles-and-quartiles"><i class="fa fa-check"></i><b>3.6</b> Percentiles and Quartiles</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive.html"><a href="descriptive.html#the-five-number-summary-and-box-plots"><i class="fa fa-check"></i><b>3.7</b> The Five-Number Summary and Box Plots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive.html"><a href="descriptive.html#excel-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8</b> Excel for Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="descriptive.html"><a href="descriptive.html#using-the-data-analysis-toolpak-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.8.1</b> Using the Data Analysis ToolPak for Descriptive Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive.html"><a href="descriptive.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualization.html"><a href="visualization.html#a-picture-is-worth-a-thousand-numbers"><i class="fa fa-check"></i><b>4.1</b> A Picture Is Worth a Thousand Numbers</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions"><i class="fa fa-check"></i><b>4.2</b> Frequency Distributions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-categorical-data"><i class="fa fa-check"></i><b>4.2.1</b> Frequency Distributions for Categorical Data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualization.html"><a href="visualization.html#frequency-distributions-for-quantitative-data"><i class="fa fa-check"></i><b>4.2.2</b> Frequency Distributions for Quantitative Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visualization.html"><a href="visualization.html#histograms"><i class="fa fa-check"></i><b>4.3</b> Histograms</a></li>
+<li class="chapter" data-level="4.4" data-path="visualization.html"><a href="visualization.html#bar-charts"><i class="fa fa-check"></i><b>4.4</b> Bar Charts</a></li>
+<li class="chapter" data-level="4.5" data-path="visualization.html"><a href="visualization.html#pie-charts"><i class="fa fa-check"></i><b>4.5</b> Pie Charts</a></li>
+<li class="chapter" data-level="4.6" data-path="visualization.html"><a href="visualization.html#line-charts-for-time-series"><i class="fa fa-check"></i><b>4.6</b> Line Charts for Time Series</a></li>
+<li class="chapter" data-level="4.7" data-path="visualization.html"><a href="visualization.html#scatter-plots"><i class="fa fa-check"></i><b>4.7</b> Scatter Plots</a></li>
+<li class="chapter" data-level="4.8" data-path="visualization.html"><a href="visualization.html#principles-of-good-data-visualization"><i class="fa fa-check"></i><b>4.8</b> Principles of Good Data Visualization</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Introduction to Probability</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#uncertainty-is-the-business-condition"><i class="fa fa-check"></i><b>5.1</b> Uncertainty Is the Business Condition</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#basic-probability-concepts"><i class="fa fa-check"></i><b>5.2</b> Basic Probability Concepts</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="probability.html"><a href="probability.html#experiments-outcomes-and-sample-spaces"><i class="fa fa-check"></i><b>5.2.1</b> Experiments, Outcomes, and Sample Spaces</a></li>
+<li class="chapter" data-level="5.2.2" data-path="probability.html"><a href="probability.html#the-probability-of-an-event"><i class="fa fa-check"></i><b>5.2.2</b> The Probability of an Event</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#classical-empirical-and-subjective-probability"><i class="fa fa-check"></i><b>5.3</b> Classical, Empirical, and Subjective Probability</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="probability.html"><a href="probability.html#classical-probability"><i class="fa fa-check"></i><b>5.3.1</b> Classical Probability</a></li>
+<li class="chapter" data-level="5.3.2" data-path="probability.html"><a href="probability.html#empirical-probability"><i class="fa fa-check"></i><b>5.3.2</b> Empirical Probability</a></li>
+<li class="chapter" data-level="5.3.3" data-path="probability.html"><a href="probability.html#subjective-probability"><i class="fa fa-check"></i><b>5.3.3</b> Subjective Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#the-complement-rule"><i class="fa fa-check"></i><b>5.4</b> The Complement Rule</a></li>
+<li class="chapter" data-level="5.5" data-path="probability.html"><a href="probability.html#the-addition-rule"><i class="fa fa-check"></i><b>5.5</b> The Addition Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="probability.html"><a href="probability.html#mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.1</b> Mutually Exclusive Events</a></li>
+<li class="chapter" data-level="5.5.2" data-path="probability.html"><a href="probability.html#general-addition-rule-non-mutually-exclusive-events"><i class="fa fa-check"></i><b>5.5.2</b> General Addition Rule (Non-Mutually Exclusive Events)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="probability.html"><a href="probability.html#the-multiplication-rule"><i class="fa fa-check"></i><b>5.6</b> The Multiplication Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="probability.html"><a href="probability.html#independent-events"><i class="fa fa-check"></i><b>5.6.1</b> Independent Events</a></li>
+<li class="chapter" data-level="5.6.2" data-path="probability.html"><a href="probability.html#dependent-events-and-conditional-probability"><i class="fa fa-check"></i><b>5.6.2</b> Dependent Events and Conditional Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="probability.html"><a href="probability.html#contingency-tables"><i class="fa fa-check"></i><b>5.7</b> Contingency Tables</a></li>
+<li class="chapter" data-level="5.8" data-path="probability.html"><a href="probability.html#tree-diagrams"><i class="fa fa-check"></i><b>5.8</b> Tree Diagrams</a></li>
+<li class="chapter" data-level="5.9" data-path="probability.html"><a href="probability.html#excel-for-probability-calculations"><i class="fa fa-check"></i><b>5.9</b> Excel for Probability Calculations</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discrete.html"><a href="discrete.html"><i class="fa fa-check"></i><b>6</b> Discrete Probability Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discrete.html"><a href="discrete.html#from-events-to-distributions"><i class="fa fa-check"></i><b>6.1</b> From Events to Distributions</a></li>
+<li class="chapter" data-level="6.2" data-path="discrete.html"><a href="discrete.html#random-variables"><i class="fa fa-check"></i><b>6.2</b> Random Variables</a></li>
+<li class="chapter" data-level="6.3" data-path="discrete.html"><a href="discrete.html#probability-distribution-tables"><i class="fa fa-check"></i><b>6.3</b> Probability Distribution Tables</a></li>
+<li class="chapter" data-level="6.4" data-path="discrete.html"><a href="discrete.html#expected-value-mean-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.4</b> Expected Value (Mean) of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.5" data-path="discrete.html"><a href="discrete.html#variance-and-standard-deviation-of-a-discrete-distribution"><i class="fa fa-check"></i><b>6.5</b> Variance and Standard Deviation of a Discrete Distribution</a></li>
+<li class="chapter" data-level="6.6" data-path="discrete.html"><a href="discrete.html#expected-value-in-business-decision-making"><i class="fa fa-check"></i><b>6.6</b> Expected Value in Business Decision Making</a></li>
+<li class="chapter" data-level="6.7" data-path="discrete.html"><a href="discrete.html#the-binomial-distribution"><i class="fa fa-check"></i><b>6.7</b> The Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-binomial-distribution"><i class="fa fa-check"></i><b>6.7.1</b> Conditions for a Binomial Distribution</a></li>
+<li class="chapter" data-level="6.7.2" data-path="discrete.html"><a href="discrete.html#binomial-probability-formula"><i class="fa fa-check"></i><b>6.7.2</b> Binomial Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="discrete.html"><a href="discrete.html#the-poisson-distribution"><i class="fa fa-check"></i><b>6.8</b> The Poisson Distribution</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="discrete.html"><a href="discrete.html#conditions-for-a-poisson-distribution"><i class="fa fa-check"></i><b>6.8.1</b> Conditions for a Poisson Distribution</a></li>
+<li class="chapter" data-level="6.8.2" data-path="discrete.html"><a href="discrete.html#poisson-probability-formula"><i class="fa fa-check"></i><b>6.8.2</b> Poisson Probability Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="discrete.html"><a href="discrete.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="normal.html"><a href="normal.html"><i class="fa fa-check"></i><b>7</b> The Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="normal.html"><a href="normal.html#the-most-important-distribution-in-statistics"><i class="fa fa-check"></i><b>7.1</b> The Most Important Distribution in Statistics</a></li>
+<li class="chapter" data-level="7.2" data-path="normal.html"><a href="normal.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="7.3" data-path="normal.html"><a href="normal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>7.3</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="7.4" data-path="normal.html"><a href="normal.html#z-scores"><i class="fa fa-check"></i><b>7.4</b> Z-Scores</a></li>
+<li class="chapter" data-level="7.5" data-path="normal.html"><a href="normal.html#finding-probabilities-using-z-scores"><i class="fa fa-check"></i><b>7.5</b> Finding Probabilities Using Z-Scores</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="normal.html"><a href="normal.html#using-standard-normal-tables"><i class="fa fa-check"></i><b>7.5.1</b> Using Standard Normal Tables</a></li>
+<li class="chapter" data-level="7.5.2" data-path="normal.html"><a href="normal.html#using-excel-for-normal-probabilities"><i class="fa fa-check"></i><b>7.5.2</b> Using Excel for Normal Probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="normal.html"><a href="normal.html#finding-values-from-probabilities-inverse-normal"><i class="fa fa-check"></i><b>7.6</b> Finding Values from Probabilities (Inverse Normal)</a></li>
+<li class="chapter" data-level="7.7" data-path="normal.html"><a href="normal.html#business-applications-of-the-normal-distribution"><i class="fa fa-check"></i><b>7.7</b> Business Applications of the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="normal.html"><a href="normal.html#quality-control"><i class="fa fa-check"></i><b>7.7.1</b> Quality Control</a></li>
+<li class="chapter" data-level="7.7.2" data-path="normal.html"><a href="normal.html#financial-returns"><i class="fa fa-check"></i><b>7.7.2</b> Financial Returns</a></li>
+<li class="chapter" data-level="7.7.3" data-path="normal.html"><a href="normal.html#employee-assessment"><i class="fa fa-check"></i><b>7.7.3</b> Employee Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="normal.html"><a href="normal.html#normal-approximation-to-the-binomial"><i class="fa fa-check"></i><b>7.8</b> Normal Approximation to the Binomial</a></li>
+<li class="chapter" data-level="" data-path="normal.html"><a href="normal.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>8</b> Sampling Distributions and the Central Limit Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sampling.html"><a href="sampling.html#from-samples-to-inference"><i class="fa fa-check"></i><b>8.1</b> From Samples to Inference</a></li>
+<li class="chapter" data-level="8.2" data-path="sampling.html"><a href="sampling.html#sampling-error"><i class="fa fa-check"></i><b>8.2</b> Sampling Error</a></li>
+<li class="chapter" data-level="8.3" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-mean"><i class="fa fa-check"></i><b>8.3</b> The Sampling Distribution of the Sample Mean</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sampling.html"><a href="sampling.html#mean-and-standard-error-of-barx"><i class="fa fa-check"></i><b>8.3.1</b> Mean and Standard Error of <span class="math inline">\(\bar{x}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="sampling.html"><a href="sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>8.4</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="8.5" data-path="sampling.html"><a href="sampling.html#applying-the-clt-to-business-problems"><i class="fa fa-check"></i><b>8.5</b> Applying the CLT to Business Problems</a></li>
+<li class="chapter" data-level="8.6" data-path="sampling.html"><a href="sampling.html#the-sampling-distribution-of-the-sample-proportion"><i class="fa fa-check"></i><b>8.6</b> The Sampling Distribution of the Sample Proportion</a></li>
+<li class="chapter" data-level="8.7" data-path="sampling.html"><a href="sampling.html#excel-simulation-to-illustrate-the-clt"><i class="fa fa-check"></i><b>8.7</b> Excel Simulation to Illustrate the CLT</a></li>
+<li class="chapter" data-level="" data-path="sampling.html"><a href="sampling.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#estimation-and-uncertainty"><i class="fa fa-check"></i><b>9.1</b> Estimation and Uncertainty</a></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-concept-of-a-confidence-interval"><i class="fa fa-check"></i><b>9.2</b> The Concept of a Confidence Interval</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#what-does-95-confidence-mean"><i class="fa fa-check"></i><b>9.2.1</b> What Does “95% Confidence” Mean?</a></li>
+<li class="chapter" data-level="9.2.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-confidence-level-and-critical-values"><i class="fa fa-check"></i><b>9.2.2</b> The Confidence Level and Critical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>9.3</b> Confidence Interval for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-t-distribution-and-confidence-interval-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>9.4</b> The t-Distribution and Confidence Interval for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#properties-of-the-t-distribution"><i class="fa fa-check"></i><b>9.4.1</b> Properties of the t-Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#confidence-interval-for-a-population-proportion"><i class="fa fa-check"></i><b>9.5</b> Confidence Interval for a Population Proportion</a></li>
+<li class="chapter" data-level="9.6" data-path="confidence-intervals.html"><a href="confidence-intervals.html#choosing-sample-size"><i class="fa fa-check"></i><b>9.6</b> Choosing Sample Size</a></li>
+<li class="chapter" data-level="9.7" data-path="confidence-intervals.html"><a href="confidence-intervals.html#interpreting-confidence-intervals-in-business-reports"><i class="fa fa-check"></i><b>9.7</b> Interpreting Confidence Intervals in Business Reports</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hypothesis-one.html"><a href="hypothesis-one.html"><i class="fa fa-check"></i><b>10</b> Hypothesis Testing — One Sample</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.1</b> The Logic of Hypothesis Testing</a></li>
+<li class="chapter" data-level="10.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#the-logic-and-structure-of-hypothesis-testing"><i class="fa fa-check"></i><b>10.2</b> The Logic and Structure of Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-1-state-the-hypotheses"><i class="fa fa-check"></i><b>10.2.1</b> Step 1: State the Hypotheses</a></li>
+<li class="chapter" data-level="10.2.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>10.2.2</b> One-Tailed vs. Two-Tailed Tests</a></li>
+<li class="chapter" data-level="10.2.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-2-set-the-significance-level"><i class="fa fa-check"></i><b>10.2.3</b> Step 2: Set the Significance Level</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#type-i-and-type-ii-errors"><i class="fa fa-check"></i><b>10.3</b> Type I and Type II Errors</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-3-compute-the-test-statistic"><i class="fa fa-check"></i><b>10.3.1</b> Step 3: Compute the Test Statistic</a></li>
+<li class="chapter" data-level="10.3.2" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-4-find-the-p-value"><i class="fa fa-check"></i><b>10.3.2</b> Step 4: Find the P-value</a></li>
+<li class="chapter" data-level="10.3.3" data-path="hypothesis-one.html"><a href="hypothesis-one.html#step-5-make-a-decision"><i class="fa fa-check"></i><b>10.3.3</b> Step 5: Make a Decision</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-mean-%CF%83-known"><i class="fa fa-check"></i><b>10.4</b> Z-Test for a Population Mean (σ Known)</a></li>
+<li class="chapter" data-level="10.5" data-path="hypothesis-one.html"><a href="hypothesis-one.html#t-test-for-a-population-mean-%CF%83-unknown"><i class="fa fa-check"></i><b>10.5</b> t-Test for a Population Mean (σ Unknown)</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="hypothesis-one.html"><a href="hypothesis-one.html#using-excels-data-analysis-toolpak-for-t-tests"><i class="fa fa-check"></i><b>10.5.1</b> Using Excel’s Data Analysis ToolPak for t-Tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="hypothesis-one.html"><a href="hypothesis-one.html#z-test-for-a-population-proportion"><i class="fa fa-check"></i><b>10.6</b> Z-Test for a Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-one.html"><a href="hypothesis-one.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-two.html"><a href="hypothesis-two.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing — Two Samples</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#comparing-two-groups"><i class="fa fa-check"></i><b>11.1</b> Comparing Two Groups</a></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#independent-vs.-paired-samples"><i class="fa fa-check"></i><b>11.2</b> Independent vs. Paired Samples</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-t-test-for-independent-means"><i class="fa fa-check"></i><b>11.3</b> Two-Sample t-Test for Independent Means</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-1-equal-variances-pooled-t-test"><i class="fa fa-check"></i><b>11.3.1</b> Case 1: Equal Variances (Pooled t-Test)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="hypothesis-two.html"><a href="hypothesis-two.html#case-2-unequal-variances-welchs-t-test"><i class="fa fa-check"></i><b>11.3.2</b> Case 2: Unequal Variances (Welch’s t-Test)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="hypothesis-two.html"><a href="hypothesis-two.html#the-paired-t-test"><i class="fa fa-check"></i><b>11.4</b> The Paired t-Test</a></li>
+<li class="chapter" data-level="11.5" data-path="hypothesis-two.html"><a href="hypothesis-two.html#two-sample-z-test-for-proportions"><i class="fa fa-check"></i><b>11.5</b> Two-Sample Z-Test for Proportions</a></li>
+<li class="chapter" data-level="11.6" data-path="hypothesis-two.html"><a href="hypothesis-two.html#effect-size-cohens-d"><i class="fa fa-check"></i><b>11.6</b> Effect Size: Cohen’s d</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-two.html"><a href="hypothesis-two.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>12</b> Correlation and Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="regression.html"><a href="regression.html#relationships-between-variables"><i class="fa fa-check"></i><b>12.1</b> Relationships Between Variables</a></li>
+<li class="chapter" data-level="12.2" data-path="regression.html"><a href="regression.html#scatter-plots-and-relationships"><i class="fa fa-check"></i><b>12.2</b> Scatter Plots and Relationships</a></li>
+<li class="chapter" data-level="12.3" data-path="regression.html"><a href="regression.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>12.3</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="12.4" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>12.4</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="regression.html"><a href="regression.html#the-regression-equation"><i class="fa fa-check"></i><b>12.4.1</b> The Regression Equation</a></li>
+<li class="chapter" data-level="12.4.2" data-path="regression.html"><a href="regression.html#the-least-squares-method"><i class="fa fa-check"></i><b>12.4.2</b> The Least Squares Method</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="regression.html"><a href="regression.html#interpreting-the-slope-and-intercept"><i class="fa fa-check"></i><b>12.5</b> Interpreting the Slope and Intercept</a></li>
+<li class="chapter" data-level="12.6" data-path="regression.html"><a href="regression.html#the-coefficient-of-determination-r2"><i class="fa fa-check"></i><b>12.6</b> The Coefficient of Determination (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="12.7" data-path="regression.html"><a href="regression.html#residuals-and-checking-model-fit"><i class="fa fa-check"></i><b>12.7</b> Residuals and Checking Model Fit</a></li>
+<li class="chapter" data-level="12.8" data-path="regression.html"><a href="regression.html#making-predictions-and-understanding-their-limits"><i class="fa fa-check"></i><b>12.8</b> Making Predictions and Understanding Their Limits</a></li>
+<li class="chapter" data-level="12.9" data-path="regression.html"><a href="regression.html#excel-for-regression-analysis"><i class="fa fa-check"></i><b>12.9</b> Excel for Regression Analysis</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>13</b> Chi-Square Tests</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="chi-square.html"><a href="chi-square.html#when-the-data-is-categorical"><i class="fa fa-check"></i><b>13.1</b> When the Data Is Categorical</a></li>
+<li class="chapter" data-level="13.2" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-statistic"><i class="fa fa-check"></i><b>13.2</b> The Chi-Square Statistic</a></li>
+<li class="chapter" data-level="13.3" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>13.3</b> The Chi-Square Goodness-of-Fit Test</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="chi-square.html"><a href="chi-square.html#concept"><i class="fa fa-check"></i><b>13.3.1</b> Concept</a></li>
+<li class="chapter" data-level="13.3.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies"><i class="fa fa-check"></i><b>13.3.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.3.3" data-path="chi-square.html"><a href="chi-square.html#degrees-of-freedom"><i class="fa fa-check"></i><b>13.3.3</b> Degrees of Freedom</a></li>
+<li class="chapter" data-level="13.3.4" data-path="chi-square.html"><a href="chi-square.html#conditions"><i class="fa fa-check"></i><b>13.3.4</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="chi-square.html"><a href="chi-square.html#the-chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.4</b> The Chi-Square Test of Independence</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="chi-square.html"><a href="chi-square.html#concept-1"><i class="fa fa-check"></i><b>13.4.1</b> Concept</a></li>
+<li class="chapter" data-level="13.4.2" data-path="chi-square.html"><a href="chi-square.html#computing-expected-frequencies-1"><i class="fa fa-check"></i><b>13.4.2</b> Computing Expected Frequencies</a></li>
+<li class="chapter" data-level="13.4.3" data-path="chi-square.html"><a href="chi-square.html#conditions-1"><i class="fa fa-check"></i><b>13.4.3</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="chi-square.html"><a href="chi-square.html#excel-for-chi-square-tests"><i class="fa fa-check"></i><b>13.5</b> Excel for Chi-Square Tests</a></li>
+<li class="chapter" data-level="13.6" data-path="chi-square.html"><a href="chi-square.html#business-applications"><i class="fa fa-check"></i><b>13.6</b> Business Applications</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="chi-square.html"><a href="chi-square.html#market-research"><i class="fa fa-check"></i><b>13.6.1</b> Market Research</a></li>
+<li class="chapter" data-level="13.6.2" data-path="chi-square.html"><a href="chi-square.html#customer-satisfaction-analysis"><i class="fa fa-check"></i><b>13.6.2</b> Customer Satisfaction Analysis</a></li>
+<li class="chapter" data-level="13.6.3" data-path="chi-square.html"><a href="chi-square.html#quality-control-1"><i class="fa fa-check"></i><b>13.6.3</b> Quality Control</a></li>
+<li class="chapter" data-level="13.6.4" data-path="chi-square.html"><a href="chi-square.html#human-resources"><i class="fa fa-check"></i><b>13.6.4</b> Human Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Business: A Practical Introduction</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descriptive" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Descriptive Statistics<a href="descriptive.html#descriptive" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="from-data-to-understanding" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> From Data to Understanding<a href="descriptive.html#from-data-to-understanding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose a regional manager for a clothing retailer receives a spreadsheet with the daily sales revenue for all 35 stores in her district over the past month — 35 stores times 30 days equals 1,050 individual data points. She cannot possibly absorb 1,050 numbers at a glance. She needs a summary. She needs descriptive statistics.</p>
+<p>Descriptive statistics are the numerical and graphical tools that take a large pile of numbers and condense them into a compact, meaningful summary. A good summary captures two essential things: <strong>where the data tends to be centered</strong> (measures of central tendency) and <strong>how spread out the data is</strong> (measures of variability).</p>
+<p>In this chapter, we develop the most important tools in each category, learn when to use each one, and practice computing them in Excel.</p>
+</div>
+<div id="measures-of-central-tendency" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Measures of Central Tendency<a href="descriptive.html#measures-of-central-tendency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A measure of central tendency is a single number that represents the “typical” or “middle” value of a data set. The three most common measures are the <strong>mean</strong>, the <strong>median</strong>, and the <strong>mode</strong>.</p>
+<div id="the-mean" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> The Mean<a href="descriptive.html#the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>arithmetic mean</strong> (often called simply the <strong>mean</strong> or the <strong>average</strong>) is the sum of all values divided by the number of values.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>Sample mean:</strong>
+<span class="math display">\[\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + \cdots + x_n}{n}\]</span></p>
+<p>where <span class="math inline">\(x_i\)</span> represents each individual value and <span class="math inline">\(n\)</span> is the number of values in the sample.</p>
+<p><strong>Population mean:</strong>
+<span class="math display">\[\mu = \frac{\sum_{i=1}^{N} x_i}{N}\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the total number of values in the population.</p>
+</div>
+<p><strong>Example:</strong> A small marketing agency tracks the number of new client inquiries it receives each week for six weeks: 14, 19, 22, 18, 25, 16.</p>
+<p><span class="math display">\[\bar{x} = \frac{14 + 19 + 22 + 18 + 25 + 16}{6} = \frac{114}{6} = 19\]</span></p>
+<p>The mean number of weekly inquiries is 19.</p>
+<p><strong>When to use the mean:</strong> The mean is the most widely used measure of center because it uses every data value in its calculation. It is appropriate for <strong>ratio or interval data</strong> without extreme outliers. It is the foundation of many other statistical calculations.</p>
+<p><strong>Weakness:</strong> The mean is sensitive to extreme values (<strong>outliers</strong>). A single very large or very small value can pull the mean away from the “typical” value in a misleading way.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+<strong>The outlier problem:</strong> Five sales representatives have the following annual sales figures: $420,000, $385,000, $402,000, $398,000, $1,850,000. The last rep had an exceptional year.</p>
+<p>Mean = ($420,000 + $385,000 + $402,000 + $398,000 + $1,850,000) / 5 = <strong>$691,000</strong></p>
+<p>But four of the five reps have sales well below $700,000. The mean is not representative of a “typical” rep. This is a case where the median is more informative.</p>
+</div>
+</div>
+<div id="the-median" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> The Median<a href="descriptive.html#the-median" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>median</strong> is the middle value in a data set when the values are arranged in order. It divides the data into two equal halves: 50% of values fall below the median and 50% fall above it.</p>
+<p><strong>Finding the median:</strong>
+1. Sort the data from smallest to largest.
+2. If <span class="math inline">\(n\)</span> is <strong>odd</strong>, the median is the value in position <span class="math inline">\(\frac{n+1}{2}\)</span>.
+3. If <span class="math inline">\(n\)</span> is <strong>even</strong>, the median is the average of the values in positions <span class="math inline">\(\frac{n}{2}\)</span> and <span class="math inline">\(\frac{n}{2} + 1\)</span>.</p>
+<p><strong>Example (odd <span class="math inline">\(n\)</span>):</strong> Seven daily call volumes: 43, 51, 29, 67, 55, 38, 71.
+Sorted: 29, 38, 43, <strong>51</strong>, 55, 67, 71. Median = 51 (the 4th value out of 7).</p>
+<p><strong>Example (even <span class="math inline">\(n\)</span>):</strong> Six transaction amounts: $22, $31, $45, $57, $64, $89.
+Median = (45 + 57) / 2 = <strong>$51</strong>.</p>
+<p><strong>When to use the median:</strong> The median is preferred when the data contains outliers or is skewed. It is the appropriate measure of center for <strong>household income</strong>, <strong>home prices</strong>, <strong>salary distributions</strong>, and other variables where extreme values are common. For ordinal data, the median is appropriate; the mean is not.</p>
+</div>
+<div id="the-mode" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> The Mode<a href="descriptive.html#the-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>mode</strong> is the value (or category) that appears most frequently in the data set.</p>
+<ul>
+<li>A data set can have <strong>no mode</strong> (all values appear once), <strong>one mode</strong> (unimodal), <strong>two modes</strong> (bimodal), or more.</li>
+<li>The mode is the only measure of central tendency that can be used for <strong>nominal data</strong>.</li>
+</ul>
+<p><strong>Example:</strong> A clothing store records the sizes purchased in one hour: S, M, L, M, XL, M, S, L, M. The mode is <strong>M</strong> (Medium), which appears 4 times. This tells the store which size to stock most heavily.</p>
+<p><strong>When to use the mode:</strong> Use the mode for categorical data, for identifying the most popular product or category, or whenever “the most frequent value” directly answers your business question.</p>
+</div>
+</div>
+<div id="the-weighted-mean" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> The Weighted Mean<a href="descriptive.html#the-weighted-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When not all values carry equal importance, the <strong>weighted mean</strong> accounts for the relative weight (importance) of each value.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[\bar{x}_w = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}\]</span></p>
+<p>where <span class="math inline">\(w_i\)</span> is the weight associated with value <span class="math inline">\(x_i\)</span>.</p>
+</div>
+<p><strong>Example:</strong> A student’s final grade consists of: Homework (20%), Midterm Exam (35%), Final Exam (45%). Their scores are 88, 74, 91.</p>
+<p><span class="math display">\[\bar{x}_w = \frac{(0.20)(88) + (0.35)(74) + (0.45)(91)}{0.20 + 0.35 + 0.45} = \frac{17.6 + 25.9 + 40.95}{1.00} = 84.45\]</span></p>
+<p>Weighted average grade: <strong>84.45</strong></p>
+<p>A business use: computing a portfolio’s average return when different assets have different weights based on investment amount.</p>
+</div>
+<div id="measures-of-variability" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Measures of Variability<a href="descriptive.html#measures-of-variability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Two data sets can have the same mean but look completely different. Consider two customer wait times (in minutes):</p>
+<ul>
+<li>Store A: 5, 5, 5, 5, 5 (mean = 5 minutes)</li>
+<li>Store B: 1, 2, 5, 8, 9 (mean = 5 minutes)</li>
+</ul>
+<p>The means are identical, but Store A has perfectly consistent wait times while Store B varies wildly. Measures of variability capture this spread.</p>
+<div id="the-range" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> The Range<a href="descriptive.html#the-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>range</strong> is the simplest measure of variability: the difference between the maximum and minimum values.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[\text{Range} = \text{Maximum} - \text{Minimum}\]</span></p>
+</div>
+<p>For Store B: Range = 9 – 1 = 8 minutes.</p>
+<p>The range is quick to compute but uses only two data points and is highly sensitive to outliers.</p>
+</div>
+<div id="variance-and-standard-deviation" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Variance and Standard Deviation<a href="descriptive.html#variance-and-standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>variance</strong> and <strong>standard deviation</strong> are the most important measures of variability. They measure, on average, how far each data point deviates from the mean.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<strong>Sample variance:</strong>
+<span class="math display">\[s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}\]</span></p>
+<p><strong>Sample standard deviation:</strong>
+<span class="math display">\[s = \sqrt{s^2} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}}\]</span></p>
+<p><strong>Population variance and standard deviation</strong> use <span class="math inline">\(N\)</span> (population size) in the denominator instead of <span class="math inline">\(n-1\)</span>: <span class="math inline">\(\sigma^2 = \frac{\sum(x_i - \mu)^2}{N}\)</span>, <span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span>.</p>
+</div>
+<p>Why <span class="math inline">\(n-1\)</span> instead of <span class="math inline">\(n\)</span> for the sample variance? Using <span class="math inline">\(n-1\)</span> (called <strong>Bessel’s correction</strong>) makes the sample variance an unbiased estimator of the population variance. With only <span class="math inline">\(n\)</span> in the denominator, the sample variance would tend to underestimate the true population variance. You do not need to memorize this justification — just know that Excel’s <code>=STDEV()</code> function uses <span class="math inline">\(n-1\)</span>, which is what you want when working with sample data.</p>
+<p><strong>Step-by-step example:</strong>
+Data set: 4, 7, 13, 2, 9 (sample of 5 daily return rates, %)</p>
+<ol style="list-style-type: decimal">
+<li>Mean: <span class="math inline">\(\bar{x} = (4+7+13+2+9)/5 = 35/5 = 7\)</span></li>
+<li>Deviations from mean: <span class="math inline">\(4-7=-3\)</span>, <span class="math inline">\(7-7=0\)</span>, <span class="math inline">\(13-7=6\)</span>, <span class="math inline">\(2-7=-5\)</span>, <span class="math inline">\(9-7=2\)</span></li>
+<li>Squared deviations: 9, 0, 36, 25, 4</li>
+<li>Sum of squared deviations: <span class="math inline">\(9+0+36+25+4 = 74\)</span></li>
+<li>Variance: <span class="math inline">\(s^2 = 74/(5-1) = 74/4 = 18.5\)</span></li>
+<li>Standard deviation: <span class="math inline">\(s = \sqrt{18.5} \approx 4.30\%\)</span></li>
+</ol>
+<p>The standard deviation of return rates is approximately 4.30%. This means a typical daily return deviates from the mean by about 4.30 percentage points.</p>
+</div>
+<div id="the-coefficient-of-variation" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> The Coefficient of Variation<a href="descriptive.html#the-coefficient-of-variation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>coefficient of variation (CV)</strong> expresses the standard deviation as a percentage of the mean, allowing comparisons of variability between data sets with different units or different means.</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+<span class="math display">\[CV = \frac{s}{\bar{x}} \times 100\%\]</span></p>
+</div>
+<p><strong>Example:</strong> Two investment funds:
+- Fund A: Mean annual return = 8%, Standard deviation = 2%, CV = 2/8 × 100% = <strong>25%</strong>
+- Fund B: Mean annual return = 20%, Standard deviation = 9%, CV = 9/20 × 100% = <strong>45%</strong></p>
+<p>Fund B offers higher returns, but it is also considerably more volatile (45% CV vs. 25% CV). An investor who wants to maximize return per unit of risk would prefer Fund A.</p>
+</div>
+</div>
+<div id="the-empirical-rule" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> The Empirical Rule<a href="descriptive.html#the-empirical-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For data that is approximately <strong>bell-shaped (normally distributed)</strong>, the <strong>Empirical Rule</strong> — sometimes called the 68-95-99.7 Rule — makes a powerful statement about where the data falls:</p>
+<div class="callout formula-box">
+<p><span class="callout-title">Formula</span>
+For a bell-shaped distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>:</p>
+<ul>
+<li>Approximately <strong>68%</strong> of the data falls within <strong>1 standard deviation</strong> of the mean: <span class="math inline">\((\mu - \sigma, \ \mu + \sigma)\)</span></li>
+<li>Approximately <strong>95%</strong> of the data falls within <strong>2 standard deviations</strong> of the mean: <span class="math inline">\((\mu - 2\sigma, \ \mu + 2\sigma)\)</span></li>
+<li>Approximately <strong>99.7%</strong> of the data falls within <strong>3 standard deviations</strong> of the mean: <span class="math inline">\((\mu - 3\sigma, \ \mu + 3\sigma)\)</span></li>
+</ul>
+</div>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+<strong>Quality Control Application:</strong> A bottling plant fills bottles with a mean fill volume of <span class="math inline">\(\mu = 16.0\)</span> oz and a standard deviation of <span class="math inline">\(\sigma = 0.1\)</span> oz. The fill volumes are approximately bell-shaped.</p>
+<ul>
+<li>68% of bottles contain between 15.9 oz and 16.1 oz (within 1 SD)</li>
+<li>95% of bottles contain between 15.8 oz and 16.2 oz (within 2 SD)</li>
+<li>99.7% of bottles contain between 15.7 oz and 16.3 oz (within 3 SD)</li>
+</ul>
+<p>A bottle filled to less than 15.7 oz or more than 16.3 oz would be extremely unusual — it falls outside three standard deviations. The quality control manager might flag such a bottle for inspection, as it likely indicates a process problem.</p>
+</div>
+<p>The Empirical Rule is only valid for approximately bell-shaped distributions. We will study the bell-shaped (normal) distribution in depth in Chapter 7.</p>
+</div>
+<div id="percentiles-and-quartiles" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Percentiles and Quartiles<a href="descriptive.html#percentiles-and-quartiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While the mean and median tell us about the center of a distribution, <strong>percentiles</strong> describe the complete picture of where values rank.</p>
+<p>The <strong><span class="math inline">\(k\)</span>th percentile</strong> is the value below which <span class="math inline">\(k\%\)</span> of the data falls. (Note: there are slight variations in how percentiles are defined; we use the definition consistent with Excel’s <code>=PERCENTILE.INC()</code> function.)</p>
+<p>The most commonly used percentiles are the <strong>quartiles</strong>:
+- <strong>First Quartile (<span class="math inline">\(Q_1\)</span>):</strong> the 25th percentile. 25% of values fall below <span class="math inline">\(Q_1\)</span>.
+- <strong>Second Quartile (<span class="math inline">\(Q_2\)</span>):</strong> the 50th percentile — the median. 50% of values fall below <span class="math inline">\(Q_2\)</span>.
+- <strong>Third Quartile (<span class="math inline">\(Q_3\)</span>):</strong> the 75th percentile. 75% of values fall below <span class="math inline">\(Q_3\)</span>.</p>
+<p>The <strong>Interquartile Range (IQR)</strong> is the distance between the first and third quartile:</p>
+<p><span class="math display">\[IQR = Q_3 - Q_1\]</span></p>
+<p>The IQR captures the spread of the middle 50% of the data. It is resistant to outliers and is preferred over the range in many situations.</p>
+</div>
+<div id="the-five-number-summary-and-box-plots" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> The Five-Number Summary and Box Plots<a href="descriptive.html#the-five-number-summary-and-box-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>five-number summary</strong> condenses a data set into five key values:</p>
+<p><span class="math display">\[\text{Minimum}, \quad Q_1, \quad \text{Median}\ (Q_2), \quad Q_3, \quad \text{Maximum}\]</span></p>
+<p>These five numbers are displayed graphically in a <strong>box plot</strong> (also called a box-and-whisker plot):
+- The <strong>box</strong> spans from <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span> (the IQR)
+- A line inside the box marks the <strong>median</strong>
+- <strong>Whiskers</strong> extend from the box to the minimum and maximum (or to 1.5 × IQR beyond the quartiles, with outliers plotted separately)</p>
+<p>Box plots are excellent for comparing distributions across groups and for quickly spotting skewness and outliers.</p>
+<div class="callout example-box">
+<p><span class="callout-title">Example</span>
+<strong>Interpreting a Five-Number Summary:</strong> A sample of 20 customer order values ($) produces the following five-number summary:</p>
+<ul>
+<li>Minimum: $12</li>
+<li><span class="math inline">\(Q_1\)</span>: $38</li>
+<li>Median (<span class="math inline">\(Q_2\)</span>): $55</li>
+<li><span class="math inline">\(Q_3\)</span>: $82</li>
+<li>Maximum: $247</li>
+</ul>
+<p>The IQR = $82 – $38 = $44. The fact that the maximum ($247) is far above <span class="math inline">\(Q_3\)</span> ($82) suggests the data is right-skewed, with a few very large orders pulling the mean above the median. The range ($235) is greatly inflated by this extreme order.</p>
+</div>
+</div>
+<div id="excel-for-descriptive-statistics" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Excel for Descriptive Statistics<a href="descriptive.html#excel-for-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Excel provides dedicated functions for every measure we have discussed.</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Key Excel Descriptive Statistics Functions:</strong></p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you want</th>
+<th>Excel Function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td><code>=AVERAGE(range)</code></td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td><code>=MEDIAN(range)</code></td>
+</tr>
+<tr class="odd">
+<td>Mode</td>
+<td><code>=MODE.SNGL(range)</code></td>
+</tr>
+<tr class="even">
+<td>Sample standard deviation</td>
+<td><code>=STDEV.S(range)</code></td>
+</tr>
+<tr class="odd">
+<td>Population standard deviation</td>
+<td><code>=STDEV.P(range)</code></td>
+</tr>
+<tr class="even">
+<td>Sample variance</td>
+<td><code>=VAR.S(range)</code></td>
+</tr>
+<tr class="odd">
+<td>Population variance</td>
+<td><code>=VAR.P(range)</code></td>
+</tr>
+<tr class="even">
+<td>Minimum</td>
+<td><code>=MIN(range)</code></td>
+</tr>
+<tr class="odd">
+<td>Maximum</td>
+<td><code>=MAX(range)</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k\)</span>th percentile</td>
+<td><code>=PERCENTILE.INC(range, k)</code> where <span class="math inline">\(k\)</span> is between 0 and 1</td>
+</tr>
+<tr class="odd">
+<td>Quartiles</td>
+<td><code>=QUARTILE.INC(range, q)</code> where <span class="math inline">\(q\)</span> = 1, 2, or 3</td>
+</tr>
+<tr class="even">
+<td>Count of values</td>
+<td><code>=COUNT(range)</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong> If your data is in cells A2:A51, the mean is <code>=AVERAGE(A2:A51)</code>, the median is <code>=MEDIAN(A2:A51)</code>, and the third quartile is <code>=QUARTILE.INC(A2:A51, 3)</code>.</p>
+</div>
+<div id="using-the-data-analysis-toolpak-for-descriptive-statistics" class="section level3 hasAnchor" number="3.8.1">
+<h3><span class="header-section-number">3.8.1</span> Using the Data Analysis ToolPak for Descriptive Statistics<a href="descriptive.html#using-the-data-analysis-toolpak-for-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Excel’s <strong>Data Analysis ToolPak</strong> can produce a complete descriptive statistics summary in one step. This is the most efficient way to get a comprehensive overview of a data set.</p>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Step-by-Step: Descriptive Statistics with the Data Analysis ToolPak</strong></p>
+<ol style="list-style-type: decimal">
+<li>Enter your data in a single column (e.g., A1:A51, with “Sales Revenue” in A1 as a header).</li>
+<li>Click the <strong>Data</strong> tab in the ribbon.</li>
+<li>Click <strong>Data Analysis</strong> (in the Analysis group, far right).</li>
+<li>Select <strong>Descriptive Statistics</strong> from the list and click <strong>OK</strong>.</li>
+<li>In the dialog box:
+<ul>
+<li><strong>Input Range:</strong> Select your data including the header (A1:A51).</li>
+<li>Check <strong>Labels in First Row</strong> (since you included the header).</li>
+<li><strong>Output Range:</strong> Click a cell in an empty area of the sheet (e.g., C1) to place results there.</li>
+<li>Check <strong>Summary statistics</strong>.</li>
+<li>Optionally check <strong>Kth Largest</strong> and <strong>Kth Smallest</strong> for specific percentile values.</li>
+</ul></li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p>Excel will produce a table showing: Mean, Standard Error, Median, Mode, Standard Deviation, Sample Variance, Kurtosis, Skewness, Range, Minimum, Maximum, Sum, and Count.</p>
+<p><strong>Note:</strong> If you don’t see “Data Analysis” under the Data tab, the ToolPak is not yet enabled. See the Preface for installation instructions.</p>
+</div>
+<div class="callout excel-tip">
+<p><span class="callout-title">Excel Tip</span>
+<strong>Computing a Weighted Mean in Excel:</strong> Use <code>=SUMPRODUCT()</code> to calculate a weighted mean efficiently.</p>
+<p>If values are in column A (A2:A6) and weights are in column B (B2:B6), the weighted mean is:
+<code>=SUMPRODUCT(A2:A6, B2:B6) / SUM(B2:B6)</code></p>
+<p><code>SUMPRODUCT</code> multiplies corresponding values in two arrays and then sums the products — exactly the numerator of the weighted mean formula.</p>
+</div>
+<hr />
+<div class="callout key-terms">
+<span class="callout-title">Key Terms</span>
+<dl>
+<dt>
+Mean
+</dt>
+<dd>
+The arithmetic average of all values in a data set; sum of all values divided by number of values.
+</dd>
+<dt>
+Median
+</dt>
+<dd>
+The middle value in a sorted data set; the 50th percentile.
+</dd>
+<dt>
+Mode
+</dt>
+<dd>
+The most frequently occurring value in a data set.
+</dd>
+<dt>
+Weighted Mean
+</dt>
+<dd>
+An average that assigns different levels of importance (weights) to different values.
+</dd>
+<dt>
+Range
+</dt>
+<dd>
+The difference between the maximum and minimum values in a data set.
+</dd>
+<dt>
+Variance (<span class="math inline">\(s^2\)</span>)
+</dt>
+<dd>
+The average of the squared deviations from the mean; the square of the standard deviation.
+</dd>
+<dt>
+Standard Deviation (<span class="math inline">\(s\)</span>)
+</dt>
+<dd>
+The square root of the variance; measures the typical distance of data values from the mean, in the same units as the data.
+</dd>
+<dt>
+Coefficient of Variation (CV)
+</dt>
+<dd>
+The standard deviation expressed as a percentage of the mean; used to compare variability between data sets with different units or scales.
+</dd>
+<dt>
+Empirical Rule
+</dt>
+<dd>
+For bell-shaped distributions: approximately 68%, 95%, and 99.7% of data fall within 1, 2, and 3 standard deviations of the mean, respectively.
+</dd>
+<dt>
+Percentile
+</dt>
+<dd>
+The value below which a given percentage of observations fall.
+</dd>
+<dt>
+Quartiles
+</dt>
+<dd>
+The 25th (<span class="math inline">\(Q_1\)</span>), 50th (<span class="math inline">\(Q_2\)</span>), and 75th (<span class="math inline">\(Q_3\)</span>) percentiles, dividing a data set into four equal parts.
+</dd>
+<dt>
+Interquartile Range (IQR)
+</dt>
+<dd>
+The difference <span class="math inline">\(Q_3 - Q_1\)</span>; represents the spread of the middle 50% of the data.
+</dd>
+<dt>
+Five-Number Summary
+</dt>
+<dd>
+A compact description of a data set: Minimum, <span class="math inline">\(Q_1\)</span>, Median, <span class="math inline">\(Q_3\)</span>, Maximum.
+</dd>
+<dt>
+Outlier
+</dt>
+<dd>
+A data value that is far removed from the bulk of the data; often defined as a value more than 1.5 × IQR below <span class="math inline">\(Q_1\)</span> or above <span class="math inline">\(Q_3\)</span>.
+</dd>
+</dl>
+</div>
+<hr />
+</div>
+</div>
+<div id="exercises-2" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="descriptive.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>A regional bank branch records the number of new account openings per day for two weeks (10 business days): 12, 8, 15, 20, 9, 14, 18, 11, 16, 13.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the <strong>mean</strong>, <strong>median</strong>, and <strong>mode</strong>.</li>
+<li>Calculate the <strong>range</strong>, <strong>variance</strong>, and <strong>standard deviation</strong> (show your work in a table with deviation and squared deviation columns).</li>
+<li>Enter this data in Excel and use <code>=AVERAGE()</code>, <code>=MEDIAN()</code>, <code>=STDEV.S()</code> to verify your answers.</li>
+</ol></li>
+<li><p>A retail chain’s seven stores reported the following weekly revenues (in thousands of dollars): $182, $215, $197, $643, $188, $201, $193.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the <strong>mean</strong> and <strong>median</strong>.</li>
+<li>Which measure better represents a “typical” store’s revenue? Why?</li>
+<li>Remove the outlier ($643) and recalculate the mean and median. How do they change? What does this illustrate about the sensitivity of the mean?</li>
+</ol></li>
+<li><p>A university’s career center records starting salaries for business graduates: $42,000; $48,000; $55,000; $52,000; $61,000; $47,000; $58,000; $44,000; $53,000; $49,000.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Use Excel to compute the <strong>five-number summary</strong> (min, <span class="math inline">\(Q_1\)</span>, median, <span class="math inline">\(Q_3\)</span>, max).</li>
+<li>Compute the <strong>IQR</strong>. Are there any outliers using the rule: outlier if below <span class="math inline">\(Q_1 - 1.5 \times IQR\)</span> or above <span class="math inline">\(Q_3 + 1.5 \times IQR\)</span>?</li>
+<li>Use the <strong>Data Analysis ToolPak</strong> to generate a full descriptive statistics report for this data.</li>
+</ol></li>
+<li><p>A mutual fund’s annual return rates over the past 10 years were: 8.2%, 11.5%, -3.4%, 14.7%, 6.1%, 9.8%, 2.3%, 12.0%, -1.5%, 7.9%.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute the <strong>mean</strong> and <strong>standard deviation</strong> of annual returns.</li>
+<li>Apply the <strong>Empirical Rule</strong> to describe where approximately 68%, 95%, and 99.7% of annual returns would be expected to fall, assuming returns are approximately bell-shaped.</li>
+<li>One year the fund returned 18%. Is this unusual? Explain using the empirical rule.</li>
+</ol></li>
+<li><p>A portfolio manager is comparing the performance of two investment strategies:</p>
+<ul>
+<li>Strategy Alpha: Mean return = 9.5%, Standard deviation = 3.2%</li>
+<li>Strategy Beta: Mean return = 14.8%, Standard deviation = 7.9%</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the <strong>Coefficient of Variation</strong> for each strategy.</li>
+<li>Which strategy has more variability relative to its return? Which would you recommend to a risk-averse investor? Explain.</li>
+</ol></li>
+<li><p>A hotel loyalty program has three membership tiers: Basic (weight = 1), Silver (weight = 2), Gold (weight = 3). The average satisfaction score for each tier was: Basic = 72, Silver = 81, Gold = 88. There are 5,000 Basic, 2,000 Silver, and 1,000 Gold members.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the <strong>simple (unweighted) average</strong> satisfaction score across tiers.</li>
+<li>Calculate the <strong>weighted average</strong> satisfaction score, using number of members as weights.</li>
+<li>Why are the two averages different? Which is more meaningful? Explain.</li>
+</ol></li>
+<li><p><em>Two call centers handle customer service inquiries. Call Center A has a mean handle time of 4.2 minutes with a standard deviation of 0.8 minutes. Call Center B has a mean handle time of 6.5 minutes with a standard deviation of 1.1 minutes. A supervisor says, “Call Center B is more variable.” Do you agree? Support your answer with a specific calculation and explain your reasoning carefully.</em></p></li>
+<li><p><em>A financial analyst examines quarterly earnings per share (EPS) for two companies over 12 quarters. Company X has mean EPS = $2.40, standard deviation = $0.95. Company Y has mean EPS = $4.10, standard deviation = $0.80. Using only this information, which company’s earnings are more predictable? Which might be more attractive to a value investor who prizes stability? Justify your answers.</em></p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["intro-stats-business.pdf", "intro-stats-business.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
